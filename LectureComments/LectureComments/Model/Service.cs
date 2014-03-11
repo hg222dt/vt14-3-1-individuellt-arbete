@@ -40,7 +40,7 @@ namespace LectureComments.Model
             }
             else
             {
-                LectureDAL.UpdateLecture(lecture);
+                //LectureDAL.UpdateLecture(lecture);
             }
         }
 

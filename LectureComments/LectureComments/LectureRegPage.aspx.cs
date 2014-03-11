@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.ComponentModel.DataAnnotations;
 using LectureComments.Model;
 
 namespace LectureComments
@@ -19,7 +20,21 @@ namespace LectureComments
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //Iteration som infaller om sessionen status returnerar "true"
+            if (Session["Status"] as bool? == true)
+            {
+                //Meddelande visas och skrivs ut.
+                //LabelStatusMessage.Text = Request.QueryString["status"];
+                //statusMessage.Visible = true;
+                //LabelStatusMessage.Visible = true;
+                Session.Remove("Status");
+            }
+            else
+            {
+                //Meddelande visas inte.
+                //statusMessage.Visible = false;
+                //LabelStatusMessage.Visible = false;
+            }
         }
 
         public IEnumerable<Lecture> LectureListView_GetData()
@@ -36,7 +51,7 @@ namespace LectureComments
                     Service.SaveLecture(Lecture);
                     Session["Status"] = true;
                     var status = "Föreläsning har lagts till!";
-                    Response.Redirect("~/Default.aspx?status=" + status);
+                    Response.Redirect("~/LectureRegPage.aspx?status=" + status);
                 }
                 catch (Exception ex)
                 {

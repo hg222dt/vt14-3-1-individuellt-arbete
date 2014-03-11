@@ -8,7 +8,7 @@
 </head>
     <body>
         <form id="form1" runat="server">
-            <div id="newLectureDiv">
+            <%--<div id="newLectureDiv">
                 <h3>Lägg till föreläsning</h3>
                 <span>Namn på föreläsning </span>
                 <asp:TextBox ID="LectureNameTB" runat="server"></asp:TextBox>
@@ -25,7 +25,7 @@
                 <span>Tidpunkt föreläsning</span>
                 <asp:TextBox ID="timeHourTB" runat="server"></asp:TextBox>
                 <asp:TextBox ID="timeMinuteTB" runat="server"></asp:TextBox>
-            </div>
+            </div>--%>
             <div id="showLecturesDiv">
                 <h3>Planerade föreläsningar</h3>
                 <asp:ListView ID="LectureListView" runat="server"
@@ -88,12 +88,12 @@
                         <tr>
                             <td>
                                 <%-- Föreläsningsnamnsinput --%>
-                                <asp:TextBox ID="InserLectureNameTB" runat="server" MaxLength="50" Visible="true" Text='<%#:BindItem.LectureName %>' ></asp:TextBox>
+                                <asp:TextBox ID="InsertLectureNameTB" runat="server" MaxLength="50" Visible="true" Text='<%#:BindItem.LectureName %>' ></asp:TextBox>
                                 <asp:RequiredFieldValidator 
                                     ID="RequiredFieldValidator1" 
                                     runat="server" 
                                     ControlToValidate="InsertLectureNameTB" 
-                                    ErrorMessage="Ange kursnamn" 
+                                    ErrorMessage="Ange föreläsningsnamn" 
                                     ValidationGroup="InsertGroup" 
                                     Display="None" ></asp:RequiredFieldValidator>
                             </td>
@@ -109,13 +109,24 @@
                                      Display="None" ></asp:RequiredFieldValidator>
                             </td>
                             <td>
-                                <%--Email-input --%>
+                                <%--Datuminput --%>
                                 <asp:TextBox ID="InsertDateTB" runat="server" Visible="true" Text='<%#:BindItem.LectureDate %>' MaxLength="50"></asp:TextBox>
                                 <asp:RequiredFieldValidator 
                                     ID="RequiredFieldValidator3" 
                                     runat="server" 
                                     ControlToValidate="InsertDateTB" 
-                                    ErrorMessage="Ange e-postadress" 
+                                    ErrorMessage="Ange datum" 
+                                    ValidationGroup="InsertGroup" 
+                                    Display="None" ></asp:RequiredFieldValidator>
+                            </td>
+                            <td>
+                                <%--Lärare-input --%>
+                                <asp:TextBox ID="InsertTeacherTB" runat="server" Visible="true" Text='<%#:BindItem.TeacherName %>' MaxLength="50"></asp:TextBox>
+                                <asp:RequiredFieldValidator 
+                                    ID="RequiredFieldValidator4" 
+                                    runat="server" 
+                                    ControlToValidate="InsertTeacherTB" 
+                                    ErrorMessage="Ange namn på lärare" 
                                     ValidationGroup="InsertGroup" 
                                     Display="None" ></asp:RequiredFieldValidator>
                             </td>

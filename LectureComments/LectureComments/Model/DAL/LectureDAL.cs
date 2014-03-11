@@ -89,5 +89,38 @@ namespace LectureComments.Model.DAL
                 //}
             }
         }
+
+
+        //Lägger till föreläsning i databasen
+        public void InsertLecture(Lecture Lecture)
+        {
+            using (var conn = CreateConnection())
+            {
+                try
+                {
+                    //string connectionString = WebConfigurationManager.ConnectionStrings["contactConnectionString"].ConnectionString;
+
+                    var cmd = new SqlCommand("appSchema.usp_CreateLecture", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@Date", SqlDbType.NVarChar, 50).Value = Lecture.LectureDate;
+                    cmd.Parameters.Add("@Teacher", SqlDbType.NVarChar, 50).Value = Lecture.TeacherName;
+                    cmd.Parameters.Add("@LectureName", SqlDbType.NVarChar, 50).Value = Lecture.LectureName;
+                    cmd.Parameters.Add("@CourseName", SqlDbType.NVarChar, 50).Value = Lecture.CourseName;
+
+                    //cmd.Parameters.Add("@ContactID", SqlDbType.Int, 4).Direction = ParameterDirection.Output;
+
+                    conn.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    //Contact.ContactId = (int)cmd.Parameters["@ContactID"].Value;
+                }
+                catch
+                {
+                    throw new ApplicationException("An error occured while adding contacts from database.");
+                }
+            }
+        }
     }
 }
