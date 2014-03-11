@@ -23,5 +23,26 @@ namespace LectureComments.Model
         {
             return LectureDAL.GetLectures();
         }
+
+        public void SaveLecture(Lecture lecture)
+        {
+            ICollection<ValidationResult> validationResults;
+            if (!lecture.Validate(out validationResults))
+            {
+                var ex = new ValidationException("Objektet klararde inte valideringen.");
+                ex.Data.Add("ValidationResults", validationResults);
+                throw ex;
+            }
+
+            if (lecture.LectureId == 0)
+            {
+                LectureDAL.InsertLecture(lecture);
+            }
+            else
+            {
+                LectureDAL.UpdateLecture(lecture);
+            }
+        }
+
     }
 }

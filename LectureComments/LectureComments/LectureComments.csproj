@@ -57,9 +57,28 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="LectureRegPage.aspx" />
+    <Content Include="LecturePage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LectureRegPage.aspx.cs">
+      <DependentUpon>LectureRegPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LectureRegPage.aspx.designer.cs">
+      <DependentUpon>LectureRegPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LecturePage.aspx.cs">
+      <DependentUpon>LecturePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LecturePage.aspx.designer.cs">
+      <DependentUpon>LecturePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Lecture.cs" />
+    <Compile Include="Model\DAL\LectureDAL.cs" />
+    <Compile Include="Model\Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -47,41 +47,46 @@ namespace LectureComments.Model.DAL
         //Hämtar alla föreläsningar från datalagret
         public IEnumerable<Lecture> GetLectures()
         {
-            string connectionString = WebConfigurationManager.ConnectionStrings["lectureConnectionString"].ConnectionString;
-
-            using (var conn = new SqlConnection(connectionString))
+            using (var conn = CreateConnection())
             {
-                var lectures = new List<Lecture>(100);
+                //try
+                //{
+                    var lectures = new List<Lecture>(100);
 
-                var cmd = new SqlCommand("appSchema.usp_GetAllLectures", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
+                    var cmd = new SqlCommand("appSchema.usp_GetAllLectures", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                conn.Open();
+                    conn.Open();
 
-                using (var reader = cmd.ExecuteReader())
-                {
-                    var lectureIdIndex = reader.GetOrdinal("LectureID");
-                    var lectureNameIndex = reader.GetOrdinal("[LectureName/description]");
-                    var courseNameIndex = reader.GetOrdinal("CourseName");
-                    var dateIndex = reader.GetOrdinal("Date");
-                    var teacherNameIndex = reader.GetOrdinal("TeacherName");
-
-                    while (reader.Read())
+                    using (var reader = cmd.ExecuteReader())
                     {
-                        lectures.Add(new Lecture
+                        var lectureIdIndex = reader.GetOrdinal("LectureID");
+                        var lectureNameIndex = reader.GetOrdinal("LectureName/description");
+                        var courseNameIndex = reader.GetOrdinal("CourseName");
+                        var dateIndex = reader.GetOrdinal("Date");
+                        var teacherNameIndex = reader.GetOrdinal("TeacherName");
+
+                        while (reader.Read())
                         {
-                            LectureId = reader.GetInt32(lectureIdIndex),
-                            LectureName = reader.GetString(lectureNameIndex),
-                            CourseName = reader.GetString(courseNameIndex),
-                            Date = reader.GetString(dateIndex),
-                            TeacherName = reader.GetString(teacherNameIndex)
-                        });
+                            lectures.Add(new Lecture
+                            {
+                                LectureId = reader.GetInt32(lectureIdIndex),
+                                LectureName = reader.GetString(lectureNameIndex),
+                                CourseName = reader.GetString(courseNameIndex),
+                                LectureDate = reader.GetString(dateIndex),
+                                TeacherName = reader.GetString(teacherNameIndex)
+                            });
+                        }
                     }
-                }
 
-                lectures.TrimExcess();
+                    lectures.TrimExcess();
 
-                return lectures;
+                    return lectures;
+                //}
+                //catch
+                //{
+                //    throw new ApplicationException("An error occured while getting lectures from database.");
+                //}
             }
         }
     }

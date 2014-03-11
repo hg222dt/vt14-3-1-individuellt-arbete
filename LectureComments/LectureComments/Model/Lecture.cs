@@ -17,7 +17,7 @@ namespace LectureComments.Model
         public string CourseName { get; set; }
 
         [Required(ErrorMessage = "Ange ett datum")]
-        public string Date { get; set; }
+        public string LectureDate { get; set; }
 
         [Required(ErrorMessage = "Ange namn på lärare")]
         public string TeacherName { get; set; }
