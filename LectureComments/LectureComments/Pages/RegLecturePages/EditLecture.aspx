@@ -43,7 +43,7 @@
                 </div>
                 <div>
                     <asp:Button ID="SaveButton" runat="server" Text="Uppdatera" CommandName="Update" />
-                    <asp:HyperLink runat="server" Text="Avbryt" NavigateUrl='<%# GetRouteUrl("CustomerDetails", new { id = Item.CustomerId }) %>' />
+                    <%--<asp:HyperLink runat="server" Text="Avbryt" NavigateUrl='<%# GetRouteUrl("CustomerDetails", new { id = Item.CustomerId }) %>' />--%>
                 </div>
             </EditItemTemplate>
         </asp:FormView>

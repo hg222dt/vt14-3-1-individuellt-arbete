@@ -40,7 +40,7 @@
                 <ItemTemplate>
                     <tr>
                         <td>
-                            <asp:Label ID="LectureNameLabel" runat="server" Text='<%#: Item.LectureName %>' />
+                            <asp:HyperLink ID="LectureNameLink" runat="server" NavigateUrl='<%# GetRouteUrl("DetailsLecture", new{ id = Item.LectureId})  %>' Text='<%# Item.LectureName %>' />
                         </td>
                         <td>
                             <asp:Label ID="CourseNameLabel" runat="server" Text='<%#: Item.CourseName %>' />
