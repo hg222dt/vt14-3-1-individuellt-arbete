@@ -24,6 +24,11 @@ namespace LectureComments.Model
             return LectureDAL.GetLectures();
         }
 
+        public Lecture GetLecture(int LectureID)
+        {
+            return LectureDAL.GetLectureById(LectureID);
+        }
+
         public void SaveLecture(Lecture lecture)
         {
             ICollection<ValidationResult> validationResults;
@@ -40,7 +45,7 @@ namespace LectureComments.Model
             }
             else
             {
-                //LectureDAL.UpdateLecture(lecture);
+                LectureDAL.UpdateLecture(lecture);
             }
         }
 

@@ -76,13 +76,13 @@
                     </ItemTemplate>
                     <EmptyDataTemplate>
                         <table>
-                                <tr>
-                                    <td>
-                                        <%-- Visas om kontaktuppgifter inte existerar i databasen --%>
-                                        Inga föreläsningar hittades i databasen.
-                                    </td>
-                                </tr>
-                            </table>
+                            <tr>
+                                <td>
+                                    <%-- Visas om kontaktuppgifter inte existerar i databasen --%>
+                                    Inga föreläsningar hittades i databasen.
+                                </td>
+                            </tr>
+                        </table>
                     </EmptyDataTemplate>
                      <InsertItemTemplate>
                         <tr>
@@ -142,43 +142,44 @@
                         <tr>
                             <td>
                                 <%-- Kontroller för att editera och validera kontakter. --%>
-                                <asp:TextBox ID="UpdateFirstNameTB" runat="server" Visible="true" Text='<%#: BindItem.FirstName %>' MaxLength="50" />
+                                <asp:TextBox ID="UpdateLectureNameTB" runat="server" Visible="true" Text='<%#: BindItem.LectureName %>' MaxLength="50" />
                                 <asp:RequiredFieldValidator 
                                     ID="RequiredFieldValidator1" 
                                     runat="server" 
-                                    ControlToValidate="UpdateFirstNameTB" 
-                                    ErrorMessage="Ange förnamn" 
+                                    ControlToValidate="UpdateLectureNameTB" 
+                                    ErrorMessage="Ange föreläsningsnamn" 
                                     ValidationGroup="EditGroup" 
                                     Display="None" ></asp:RequiredFieldValidator>
                             </td>
                             <td>
-                                <asp:TextBox ID="UpdateLastNameTB" runat="server" Visible="true" Text='<%#: BindItem.LastName %>' MaxLength="50" />
+                                <asp:TextBox ID="UpdateCourseNameTB" runat="server" Visible="true" Text='<%#: BindItem.CourseName %>' MaxLength="50" />
                                 <asp:RequiredFieldValidator 
                                     ID="RequiredFieldValidator2" 
                                     runat="server" 
-                                    ControlToValidate="UpdateLastNameTB" 
-                                    ErrorMessage="Ange efternamn" 
+                                    ControlToValidate="UpdateCourseNameTB" 
+                                    ErrorMessage="Ange kursnamn" 
                                     ValidationGroup="EditGroup" 
                                     Display="None" ></asp:RequiredFieldValidator>
                             </td>
                             <td>
-                                <asp:TextBox ID="UpdateEmailTB" runat="server" Visible="true" Text='<%#: BindItem.Email%>' MaxLength="50" />
+                                <asp:TextBox ID="UpdateDateTB" runat="server" Visible="true" Text='<%#: BindItem.LectureDate%>' MaxLength="50" />
                                 <asp:RequiredFieldValidator 
                                     ID="RequiredFieldValidator3" 
                                     runat="server" 
-                                    ControlToValidate="UpdateEmailTB" 
-                                    ErrorMessage="Ange e-postadress" 
+                                    ControlToValidate="UpdateDateTB" 
+                                    ErrorMessage="Ange datum" 
                                     ValidationGroup="EditGroup" 
                                     Display="None" ></asp:RequiredFieldValidator>
-
-                                <asp:RegularExpressionValidator 
-                                    ID="RegularExpressionValidator1" 
+                            </td>
+                            <td>
+                                <asp:TextBox ID="UpdateTeacherTB" runat="server" Visible="true" Text='<%#: BindItem.TeacherName%>' MaxLength="50" />
+                                <asp:RequiredFieldValidator 
+                                    ID="RequiredFieldValidator5" 
                                     runat="server" 
-                                    ControlToValidate="UpdateEmailTB" 
-                                    ValidationExpression="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" 
-                                    ErrorMessage="Ange korrekt e-postadress" 
+                                    ControlToValidate="UpdateTeacherTB" 
+                                    ErrorMessage="Ange namn på lärare" 
                                     ValidationGroup="EditGroup" 
-                                    Display="None" ></asp:RegularExpressionValidator>
+                                    Display="None" ></asp:RequiredFieldValidator>
                             </td>
                             <td>
                                 <asp:LinkButton CommandName="Update" runat="server" Text="Uppdatera" />

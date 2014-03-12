@@ -49,8 +49,8 @@ namespace LectureComments.Model.DAL
         {
             using (var conn = CreateConnection())
             {
-                //try
-                //{
+                try
+                {
                     var lectures = new List<Lecture>(100);
 
                     var cmd = new SqlCommand("appSchema.usp_GetAllLectures", conn);
@@ -82,11 +82,11 @@ namespace LectureComments.Model.DAL
                     lectures.TrimExcess();
 
                     return lectures;
-                //}
-                //catch
-                //{
-                //    throw new ApplicationException("An error occured while getting lectures from database.");
-                //}
+                }
+                catch
+                {
+                    throw new ApplicationException("An error occured while getting lectures from database.");
+                }
             }
         }
 
@@ -119,6 +119,80 @@ namespace LectureComments.Model.DAL
                 catch
                 {
                     throw new ApplicationException("An error occured while adding contacts from database.");
+                }
+            }
+        }
+
+        public Lecture GetLectureById(int LectureID)
+        {
+            using (var conn = CreateConnection())
+            {
+                try
+                {
+                    //string connectionString = WebConfigurationManager.ConnectionStrings["lectureConnectionString"].ConnectionString;
+
+                    var cmd = new SqlCommand("appSchema.usp_GetLectureById", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@LectureID", SqlDbType.Int, 4).Value = LectureID;
+
+                    conn.Open();
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        var lectureIdIndex = reader.GetOrdinal("LectureID");
+                        var lectureNameIndex = reader.GetOrdinal("LectureName/description");
+                        var courseNameIndex = reader.GetOrdinal("CourseName");
+                        var dateIndex = reader.GetOrdinal("Date");
+                        var teacherNameIndex = reader.GetOrdinal("TeacherName");
+
+                        if (reader.Read())
+                        {
+                            return new Lecture
+                            {
+                                LectureId = reader.GetInt32(lectureIdIndex),
+                                LectureName = reader.GetString(lectureNameIndex),
+                                CourseName = reader.GetString(courseNameIndex),
+                                LectureDate = reader.GetString(dateIndex),
+                                TeacherName = reader.GetString(teacherNameIndex)
+                            };
+                        }
+                    }
+
+                    return null;
+                }
+                catch
+                {
+                    throw new ApplicationException("An error occured while getting contacts from database.");
+                }
+            }
+        }
+
+        //Uppdaterar föreläsning i datalagret.
+        public void UpdateLecture(Lecture Lecture)
+        {
+            //Skapar och initierar anslutningobjekt
+            using (SqlConnection conn = CreateConnection())
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("appSchema.usp_UpdateLecture", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@Date", SqlDbType.NVarChar, 50).Value = Lecture.LectureDate;
+                    cmd.Parameters.Add("@Teacher", SqlDbType.NVarChar, 50).Value = Lecture.TeacherName;
+                    cmd.Parameters.Add("@LectureName", SqlDbType.NVarChar, 50).Value = Lecture.LectureName;
+                    cmd.Parameters.Add("@CourseName", SqlDbType.NVarChar, 50).Value = Lecture.CourseName;
+                    cmd.Parameters.Add("@LectureID", SqlDbType.NVarChar, 50).Value = Lecture.LectureId;
+
+                    conn.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                }
+                catch
+                {
+                    throw new ApplicationException("Problem occured while updating lecture.");
                 }
             }
         }

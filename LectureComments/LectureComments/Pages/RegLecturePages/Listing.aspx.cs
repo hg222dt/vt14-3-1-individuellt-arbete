@@ -7,9 +7,9 @@ using System.Web.UI.WebControls;
 using System.ComponentModel.DataAnnotations;
 using LectureComments.Model;
 
-namespace LectureComments
+namespace LectureComments.Pages.RegLecturePages
 {
-    public partial class CourseRegistration : System.Web.UI.Page
+    public partial class Listing : System.Web.UI.Page
     {
         private Service _service;
 
@@ -57,11 +57,11 @@ namespace LectureComments
                 {
                     var validationResults = ex.Data["ValidationResults"] as IEnumerable<ValidationResult>;
 
-                    if(validationResults != null)
+                    if (validationResults != null)
                     {
-                        foreach(var validationResult in validationResults)
+                        foreach (var validationResult in validationResults)
                         {
-                            foreach(var memberName in validationResult.MemberNames)
+                            foreach (var memberName in validationResult.MemberNames)
                             {
                                 ModelState.AddModelError(memberName, validationResult.ErrorMessage);
                             }
