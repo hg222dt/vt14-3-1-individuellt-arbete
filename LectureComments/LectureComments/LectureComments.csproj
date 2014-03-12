@@ -62,7 +62,7 @@
     <Content Include="LecturePage.aspx" />
     <Content Include="Pages\RegLecturePages\CreateLecture.aspx" />
     <Content Include="Pages\RegLecturePages\Delete.aspx" />
-    <Content Include="Pages\RegLecturePages\Edit.aspx" />
+    <Content Include="Pages\RegLecturePages\EditLecture.aspx" />
     <Content Include="Pages\RegLecturePages\Listing.aspx" />
     <Content Include="Pages\Shared\error.aspx" />
     <Content Include="Web.config" />
@@ -104,12 +104,12 @@
     <Compile Include="Pages\RegLecturePages\Delete.aspx.designer.cs">
       <DependentUpon>Delete.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RegLecturePages\Edit.aspx.cs">
-      <DependentUpon>Edit.aspx</DependentUpon>
+    <Compile Include="Pages\RegLecturePages\EditLecture.aspx.cs">
+      <DependentUpon>EditLecture.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\RegLecturePages\Edit.aspx.designer.cs">
-      <DependentUpon>Edit.aspx</DependentUpon>
+    <Compile Include="Pages\RegLecturePages\EditLecture.aspx.designer.cs">
+      <DependentUpon>EditLecture.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\RegLecturePages\Listing.aspx.cs">
       <DependentUpon>Listing.aspx</DependentUpon>

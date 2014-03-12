@@ -14,9 +14,7 @@
             <asp:ListView ID="LectureListView" runat="server"
                 ItemType="LectureComments.Model.Lecture"
                 SelectMethod="LectureListView_GetData"
-                DataKeyNames="LectureID"
-                DeleteMethod="LectureListView_DeleteItem"
-                InsertItemPosition="FirstItem">
+                DataKeyNames="LectureID">
                 <LayoutTemplate>
                     <table>
                         <tr>

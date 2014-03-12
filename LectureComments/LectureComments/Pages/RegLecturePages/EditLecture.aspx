@@ -13,6 +13,7 @@
                 ItemType="LectureComments.Model.Lecture"
                 DataKeyNames="LectureID"
                 UpdateMethod="UpdateLectureForm_UpdateItem"
+                SelectMethod="LectureFormView_GetItem"
                 DefaultMode="Edit"
                 RenderOuterTable="false">
             <EditItemTemplate>
@@ -41,7 +42,8 @@
                     <asp:TextBox ID="TeacherNameTB" runat="server" Text='<%# BindItem.TeacherName %>' />
                 </div>
                 <div>
-                    <asp:Button ID="SaveButton" runat="server" Text="Lägg till föreläsning" CommandName="Insert" />
+                    <asp:Button ID="SaveButton" runat="server" Text="Uppdatera" CommandName="Update" />
+                    <asp:HyperLink runat="server" Text="Avbryt" NavigateUrl='<%# GetRouteUrl("CustomerDetails", new { id = Item.CustomerId }) %>' />
                 </div>
             </EditItemTemplate>
         </asp:FormView>
