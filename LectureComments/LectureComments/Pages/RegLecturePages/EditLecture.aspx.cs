@@ -23,7 +23,21 @@ namespace LectureComments.Pages.RegLecturePages
 
         }
 
-        protected void UpdateLectureForm_UpdateItem(int lectureID)
+        public Lecture LectureFormView_GetItem([RouteData]int id)
+        {
+            try
+            {
+                return Service.GetLecture(id);
+            }
+            catch (Exception)
+            {
+                ModelState.AddModelError(String.Empty, "Fel inträffade då föreläsningen hämtades vid redigering.");
+                return null;
+            }
+        }
+
+
+        public void UpdateLectureForm_UpdateItem(int lectureID)
         {
             try
             {
@@ -41,27 +55,14 @@ namespace LectureComments.Pages.RegLecturePages
                     Service.SaveLecture(lecture);
 
                     //Page.SetTempData("SuccessMessage", "Kunden uppdaterades.");
-                    //Response.RedirectToRoute("LectureDetails", new { id = lecture.LectureId });
-                    //Context.ApplicationInstance.CompleteRequest();
+                    Response.RedirectToRoute("DetailsLecture", new { id = lecture.LectureId });
+                    Context.ApplicationInstance.CompleteRequest();
                 }
             }
             catch (Exception)
             {
                 ModelState.AddModelError(String.Empty, "Fel inträffade då kunden skulle uppdateras.");
             }
-        }
-
-        public Lecture LectureFormView_GetItem(int id)
-        {
-            //try
-            //{
-                return Service.GetLecture(id);
-            //}
-            //catch (Exception)
-            //{
-            //    ModelState.AddModelError(String.Empty, "Ett fel inträffade då föreläsningsinfo hämtades vid uppdatering.");
-            //    return Service.GetLecture(id);
-            //}
         }
     }
 }

@@ -179,8 +179,8 @@ namespace LectureComments.Model.DAL
                     SqlCommand cmd = new SqlCommand("appSchema.usp_UpdateLecture", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@Date", SqlDbType.NVarChar, 50).Value = Lecture.LectureDate;
-                    cmd.Parameters.Add("@Teacher", SqlDbType.NVarChar, 50).Value = Lecture.TeacherName;
+                    cmd.Parameters.Add("@DateTime", SqlDbType.NVarChar, 50).Value = Lecture.LectureDate;
+                    cmd.Parameters.Add("@TeacherName", SqlDbType.NVarChar, 50).Value = Lecture.TeacherName;
                     cmd.Parameters.Add("@LectureName", SqlDbType.NVarChar, 50).Value = Lecture.LectureName;
                     cmd.Parameters.Add("@CourseName", SqlDbType.NVarChar, 50).Value = Lecture.CourseName;
                     cmd.Parameters.Add("@LectureID", SqlDbType.NVarChar, 50).Value = Lecture.LectureId;
@@ -193,6 +193,28 @@ namespace LectureComments.Model.DAL
                 catch
                 {
                     throw new ApplicationException("Problem occured while updating lecture.");
+                }
+            }
+        }
+
+        public void DeleteLecture (int LectureID)
+        {
+            using (SqlConnection conn = CreateConnection())
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("appSchema.usp_EraseLecture", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@LectureID", SqlDbType.Int, 4).Value = LectureID;
+
+                    conn.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+                catch
+                {
+                    throw new ApplicationException("Fel uppkom när i LectureDAL");
                 }
             }
         }

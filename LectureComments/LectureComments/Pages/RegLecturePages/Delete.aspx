@@ -9,7 +9,10 @@
 <body>
     <form id="form1" runat="server">
     <div>
+        <h3>Vill du verkligen ta bort föreläsningen?</h3>
     
+        <asp:LinkButton runat="server" ID="DeleteLink" Text="Radera föreläsningen" OnCommand="DeleteLink_Command" CommandArgument='<%$ RouteValue:id %>' />
+        <asp:HyperLink runat="server" ID="CancelLink" Text="Avbryt" />
     </div>
     </form>
 </body>

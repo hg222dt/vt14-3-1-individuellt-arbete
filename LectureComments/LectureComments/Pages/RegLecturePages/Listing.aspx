@@ -8,6 +8,11 @@
 </head>
 <body>
     <form id="form1" runat="server">
+
+        <asp:Panel ID="StatusMessagePanel" runat="server" Visible="false" CssClass="AssignmentSuccess">
+            <asp:Label ID="StatusMessageLabel" runat="server" Text="" />
+        </asp:Panel>
+
         <div id="showLecturesDiv">
             <h3>Planerade föreläsningar</h3>
             <asp:HyperLink ID="CreateLectureLink" runat="server"  Text="Lägg till föreläsning" NavigateUrl="<%$ RouteUrl:routename=CreateLecture %>"/>
@@ -22,13 +27,7 @@
                                 Föreläsningsnamn
                             </th>
                             <th>
-                                Kurs
-                            </th>
-                            <th>
                                 Datum
-                            </th>
-                            <th>
-                                Lärare
                             </th>
                         </tr>
 
@@ -43,13 +42,7 @@
                             <asp:HyperLink ID="LectureNameLink" runat="server" NavigateUrl='<%# GetRouteUrl("DetailsLecture", new{ id = Item.LectureId})  %>' Text='<%# Item.LectureName %>' />
                         </td>
                         <td>
-                            <asp:Label ID="CourseNameLabel" runat="server" Text='<%#: Item.CourseName %>' />
-                        </td>
-                        <td>
                             <asp:Label ID="LectureDateLabel" runat="server" Text='<%#: Item.LectureDate %>' />
-                        </td>
-                        <td>
-                            <asp:Label ID="TeacherNameLabel" runat="server" Text='<%#: Item.TeacherName %>' />
                         </td>
                     </tr>
                 </ItemTemplate>

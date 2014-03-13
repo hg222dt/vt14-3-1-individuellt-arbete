@@ -40,6 +40,11 @@
                 <div class="edit-field">
                     <%#: Item.TeacherName %>
                 </div>
+                <div>
+                    <asp:HyperLink runat="server" Text="Uppdatera" NavigateUrl='<%# GetRouteUrl("EditLecture", new { id = Item.LectureId }) %>' />
+                    <asp:HyperLink runat="server" Text="Radera föreläsning" NavigateUrl='<%# GetRouteUrl("DeleteLecture", new { id = Item.LectureId }) %>' />
+                    <asp:HyperLink runat="server" Text="Tillbaka till överblick" NavigateUrl='<%# GetRouteUrl("LectureListing", null)%>' />
+                </div>
             </ItemTemplate>
         </asp:FormView>
     </div>

@@ -49,5 +49,10 @@ namespace LectureComments.Model
             }
         }
 
+        public void DeleteLecture(int id)
+        {
+            LectureDAL.DeleteLecture(id);
+        }
+
     }
 }
