@@ -29,6 +29,8 @@ namespace LectureComments.Pages.RegLecturePages
                 try
                 {
                     Service.SaveLecture(Lecture);
+                    Page.SetTempData("SuccessMessage", "Föreläsningen lades till!");
+                    Response.RedirectToRoute("LectureListing", new { id = Lecture.LectureId });
                 }
                 catch(Exception)
                 {

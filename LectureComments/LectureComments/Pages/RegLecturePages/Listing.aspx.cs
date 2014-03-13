@@ -20,10 +20,10 @@ namespace LectureComments.Pages.RegLecturePages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Page.PeekTempData("SuccessMessage") as string == "Föreläsning togs bort.")
+            if (Page.PeekTempData("SuccessMessage") as string != null)
             {
-                DeleteSucceedLabel.Text = Page.GetTempData("SuccessMessage") as string;
-                DeleteSucceedPanel.Visible = true;
+                SucceedLabel.Text = Page.GetTempData("SuccessMessage") as string;
+                SucceedPanel.Visible = true;
             }
         }
 
