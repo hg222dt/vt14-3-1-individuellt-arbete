@@ -20,7 +20,11 @@ namespace LectureComments.Pages.RegLecturePages
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Page.PeekTempData("SuccessMessage") as string == "Föreläsningen uppdaterades.")
+            {
+                UpdateSucceedLabel.Text = Page.GetTempData("SuccessMessage") as string;
+                UpdateSucceedPanel.Visible = true;
+            }
         }
 
         public Lecture LectureFormView_GetItem([RouteData] int id)

@@ -54,7 +54,7 @@ namespace LectureComments.Pages.RegLecturePages
                 {
                     Service.SaveLecture(lecture);
 
-                    //Page.SetTempData("SuccessMessage", "Kunden uppdaterades.");
+                    Page.SetTempData("SuccessMessage", "Föreläsningen uppdaterades.");
                     Response.RedirectToRoute("DetailsLecture", new { id = lecture.LectureId });
                     Context.ApplicationInstance.CompleteRequest();
                 }

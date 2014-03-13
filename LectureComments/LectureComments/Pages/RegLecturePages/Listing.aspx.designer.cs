@@ -22,22 +22,22 @@ namespace LectureComments.Pages.RegLecturePages {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// StatusMessagePanel control.
+        /// DeleteSucceedPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel StatusMessagePanel;
+        protected global::System.Web.UI.WebControls.Panel DeleteSucceedPanel;
         
         /// <summary>
-        /// StatusMessageLabel control.
+        /// DeleteSucceedLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label StatusMessageLabel;
+        protected global::System.Web.UI.WebControls.Label DeleteSucceedLabel;
         
         /// <summary>
         /// CreateLectureLink control.

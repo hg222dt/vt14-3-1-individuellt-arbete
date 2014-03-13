@@ -9,8 +9,9 @@
 <body>
     <form id="form1" runat="server">
 
-        <asp:Panel ID="StatusMessagePanel" runat="server" Visible="false" CssClass="AssignmentSuccess">
-            <asp:Label ID="StatusMessageLabel" runat="server" Text="" />
+        <asp:Panel ID="DeleteSucceedPanel" runat="server" Visible="false" CssClass="AssignmentSuccess">
+            <asp:Label ID="DeleteSucceedLabel" runat="server" Text="" />
+            <a href="#" id="CloseLink">Stäng meddelande</a>
         </asp:Panel>
 
         <div id="showLecturesDiv">
@@ -59,5 +60,14 @@
             </asp:ListView>
         </div>
     </form>
+    <script type="text/javascript">
+        setTimeout(function () {
+            var closeMessageLink = document.getElementById("CloseLink");
+            var statusMessageDiv = document.getElementById("DeleteSucceedPanel");
+            closeMessageLink.onclick = function () {
+                statusMessageDiv.parentElement.removeChild(statusMessageDiv);
+            }
+        }, 1000);
+    </script>
 </body>
 </html>

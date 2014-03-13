@@ -8,6 +8,11 @@
 </head>
 <body>
     <form id="form1" runat="server">
+
+    <asp:Panel ID="UpdateSucceedPanel" runat="server" Visible="false" CssClass="AssignmentSuccess">
+        <asp:Label ID="UpdateSucceedLabel" runat="server" Text="" />
+        <a href="#" id="CloseLink">Stäng meddelande</a>
+    </asp:Panel>
     <div>
         <h3>Föreläsningsinfo</h3>
     
@@ -49,5 +54,14 @@
         </asp:FormView>
     </div>
     </form>
+    <script type="text/javascript">
+        setTimeout(function () {
+            var closeMessageLink = document.getElementById("CloseLink");
+            var statusMessageDiv = document.getElementById("UpdateSucceedPanel");
+            closeMessageLink.onclick = function () {
+                statusMessageDiv.parentElement.removeChild(statusMessageDiv);
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
