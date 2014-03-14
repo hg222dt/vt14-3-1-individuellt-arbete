@@ -37,6 +37,11 @@ namespace LectureComments.Model
             return LectureDAL.GetLectureById(LectureID);
         }
 
+        public Question GetQuestion(int QuestionID)
+        {
+            return ThreadDAL.GetQuestionById(QuestionID)
+        }
+
         public void SaveLecture(Lecture lecture)
         {
             ICollection<ValidationResult> validationResults;
@@ -65,6 +70,11 @@ namespace LectureComments.Model
         public void StartThread(Thread Thread)
         {
             ThreadDAL.StartThread(Thread);
+        }
+
+        public void UpdateComment(Question Question)
+        {
+            ThreadDAL.UpdateComment(Question);
         }
 
         public IEnumerable<Thread> getThreadByID(int LectureID)

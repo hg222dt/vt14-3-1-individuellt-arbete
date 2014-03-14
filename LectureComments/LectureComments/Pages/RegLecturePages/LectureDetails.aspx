@@ -61,6 +61,7 @@
         <asp:ListView ID="ThreadListView" runat="server"
             ItemType="LectureComments.Model.Thread"
             SelectMethod="ThreadListView_GetData"
+            UpdateMethod="ThreadListView_UpdateItem"
             DataKeyNames="ThreadID">
             <LayoutTemplate>
                 <table>
@@ -87,15 +88,31 @@
                 </tr>
             </ItemTemplate>
             <EmptyDataTemplate>
-                <table>
-                    <tr>
-                        <td>
-                            
-                            Inga frågor hittades i databasen.
-                        </td>
-                    </tr>
-                </table>
             </EmptyDataTemplate>
+            <EditItemTemplate>
+                <tr>
+                    <td>
+                        <%-- Kontroller för att editera och validera fråga. --%>
+                        <asp:TextBox ID="UpdateQuestionTB" runat="server" Visible="true" Text='<%#: BindItem.QuestionText %>' MaxLength="50" />
+                        <asp:RequiredFieldValidator 
+                            ID="RequiredFieldValidator1" 
+                            runat="server" 
+                            ControlToValidate="UpdateDiscTextTB" 
+                            ErrorMessage="Du får inte lämna frågan tom." 
+                            ValidationGroup="EditGroup" 
+                            Display="None" />
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+                        <asp:LinkButton CommandName="Update" runat="server" Text="Uppdatera" />
+                    </td>
+                    <td>
+                        <asp:LinkButton CommandName="Cancel" runat="server" Text="Avbryt" CausesValidation="false" />
+                    </td>
+                </tr>
+            </EditItemTemplate>
         </asp:ListView>
 
     </div>
