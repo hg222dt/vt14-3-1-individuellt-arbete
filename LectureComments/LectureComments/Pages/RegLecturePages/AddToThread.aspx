@@ -9,13 +9,17 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <h3>Ställ en fråga!</h3>
+        <asp:Panel ID="SucceedPanel" runat="server" Visible="false" CssClass="AssignmentSuccess">
+            <asp:Label ID="SucceedLabel" runat="server" Text="" />
+            <a href="#" id="CloseLink">Tillbaka till föreläsning</a>
+        </asp:Panel>
         <asp:FormView ID="CreateLectureForm" runat="server"
             ItemType="LectureComments.Model.Thread"
             InsertMethod="AddToThreadForm_InsertItem"
             DefaultMode="Insert"
             RenderOuterTable="false">
             <InsertItemTemplate>
+                <h3>Ställ en fråga!</h3>
                 <div>
                     <label>Fråga</label>
                 </div>
@@ -41,5 +45,15 @@
         </asp:FormView>
     </div>
     </form>
+    <script type="text/javascript">
+        setTimeout(function () {
+            var closeMessageLink = document.getElementById("CloseLink");
+            var statusMessageDiv = document.getElementById("SucceedPanel");
+            
+            closeMessageLink.onclick = function () {
+                close();
+            }
+        }, 1000);
+    </script>
 </body>
 </html>

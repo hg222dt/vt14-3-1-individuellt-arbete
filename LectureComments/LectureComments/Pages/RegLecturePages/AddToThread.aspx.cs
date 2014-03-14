@@ -41,6 +41,13 @@ namespace LectureComments.Pages.RegLecturePages
                     ModelState.AddModelError(String.Empty,
                         "Ett fel inträffade när föreläsning skulle läggas till.");
                 }
+
+                if (Page.PeekTempData("SuccessMessage") as string != null)
+                {
+                    SucceedLabel.Text = Page.GetTempData("SuccessMessage") as string;
+                    SucceedPanel.Visible = true;
+                    CreateLectureForm.Visible = false;
+                }
             }
         }
     }

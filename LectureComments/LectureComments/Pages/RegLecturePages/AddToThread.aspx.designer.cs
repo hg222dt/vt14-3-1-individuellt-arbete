@@ -22,6 +22,24 @@ namespace LectureComments.Pages.RegLecturePages {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// SucceedPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel SucceedPanel;
+        
+        /// <summary>
+        /// SucceedLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label SucceedLabel;
+        
+        /// <summary>
         /// CreateLectureForm control.
         /// </summary>
         /// <remarks>

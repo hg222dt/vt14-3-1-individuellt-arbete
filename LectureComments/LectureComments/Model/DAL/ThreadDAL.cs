@@ -68,5 +68,54 @@ namespace LectureComments.Model.DAL
                 }
             }
         }
+
+        public IEnumerable<Thread> getThreadByID(int LectureID)
+        {
+            using (var conn = CreateConnection())
+            {
+                try
+                {
+                    var thread = new List<Thread>(100);
+
+                    var cmd = new SqlCommand("appSchema.usp_GetWholeThread", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@LectureID", SqlDbType.Int, 4).Value = LectureID;
+
+                    conn.Open();
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        var threadIdIndex = reader.GetOrdinal("ThreadID");
+                        var lectureIdIndex = reader.GetOrdinal("LectureID");
+                        var discTextIndex = reader.GetOrdinal("DiscText");
+                        var dateIndex = reader.GetOrdinal("Date");
+                        var authorNameIndex = reader.GetOrdinal("Author");
+                        var timecodeIndex = reader.GetOrdinal("Timecode");
+
+                        while (reader.Read())
+                        {
+                            thread.Add(new Thread
+                            {
+                                ThreadID = reader.GetInt32(threadIdIndex),
+                                LectureID = reader.GetInt32(lectureIdIndex),
+                                QuestionText = reader.GetString(discTextIndex),
+                                Date = reader.GetString(dateIndex),
+                                Author = reader.GetString(authorNameIndex),
+                                Timecode = reader.GetString(timecodeIndex)
+                            });
+                        }
+                    }
+
+                    thread.TrimExcess();
+
+                    return thread;
+                }
+                catch
+                {
+                    throw new ApplicationException("An error occured while getting lectures from database.");
+                }
+            }
+        }
     }
 }

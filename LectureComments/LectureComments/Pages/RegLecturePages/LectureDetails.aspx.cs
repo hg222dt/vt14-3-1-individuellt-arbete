@@ -9,9 +9,10 @@ using System.Web.ModelBinding;
 
 namespace LectureComments.Pages.RegLecturePages
 {
-
     public partial class LectureDetails : System.Web.UI.Page
     {
+        private int RouteID;
+
         private Service _service;
 
         private Service Service
@@ -29,10 +30,11 @@ namespace LectureComments.Pages.RegLecturePages
 
         public Lecture LectureFormView_GetItem([RouteData] int id)
         {
+            RouteID = id;
+
             try
             {
-                Service service = new Service();
-                return service.GetLecture(id);
+                return Service.GetLecture(id);
             }
             catch (Exception)
             {
@@ -43,7 +45,8 @@ namespace LectureComments.Pages.RegLecturePages
 
         public IEnumerable<Thread> ThreadListView_GetData()
         {
-            return Service.getThread();
+            return Service.getThreadByID(RouteID);
         }
+
     }
 }

@@ -50,7 +50,7 @@
                     <asp:HyperLink runat="server" Text="Radera föreläsning" NavigateUrl='<%# GetRouteUrl("DeleteLecture", new { id = Item.LectureId }) %>' />
                     <asp:HyperLink runat="server" Text="Tillbaka till överblick" NavigateUrl='<%# GetRouteUrl("LectureListing", null)%>' />
                     
-                    <asp:HyperLink ID="CommentLink" runat="server" NavigateUrl='<%# GetRouteUrl("AddToThread", new{ id = Item.LectureId})  %>' Text="Ställ en fråga" />
+                    <asp:HyperLink ID="CommentLink" runat="server" NavigateUrl='<%# GetRouteUrl("AddToThread", new{ id = Item.LectureId})  %>' Text="Ställ en fråga" Target="_blank"/>
                 </div>
                 <div class="video-field">
                     <asp:Literal ID="Literal1" runat="server" Text="<%#: Item.VideoUrl %>" />
@@ -58,12 +58,45 @@
             </ItemTemplate>
         </asp:FormView>
 
-        <asp:FormView ID="FormView1" runat="server">
+        <asp:ListView ID="ThreadListView" runat="server"
+            ItemType="LectureComments.Model.Thread"
+            SelectMethod="ThreadListView_GetData"
+            DataKeyNames="ThreadID">
+            <LayoutTemplate>
+                <table>
+                    <tr>
+                        <th>
+                            Fråga
+                        </th>
+                        <th>
+                            Tid i video
+                        </th>
+                    </tr>
 
-
-
-        </asp:FormView>
-
+                    <asp:PlaceHolder ID="itemPlaceHolder" runat="server"></asp:PlaceHolder>
+                </table>
+            </LayoutTemplate>
+            <ItemTemplate>
+                <tr>
+                    <td>
+                        <asp:Label ID="Label1" runat="server" Text='<%#: Item.QuestionText %>' />
+                    </td>
+                    <td>
+                        <asp:Label ID="Label2" runat="server" Text='<%#: Item.Timecode %>' />
+                    </td>
+                </tr>
+            </ItemTemplate>
+            <EmptyDataTemplate>
+                <table>
+                    <tr>
+                        <td>
+                            
+                            Inga frågor hittades i databasen.
+                        </td>
+                    </tr>
+                </table>
+            </EmptyDataTemplate>
+        </asp:ListView>
 
     </div>
     </form>

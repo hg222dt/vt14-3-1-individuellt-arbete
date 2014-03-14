@@ -30,7 +30,6 @@ namespace LectureComments.Pages.RegLecturePages
                 {
                     Service.SaveLecture(Lecture);
                     Page.SetTempData("SuccessMessage", "Föreläsningen lades till!");
-                    Response.RedirectToRoute("LectureListing", new { id = Lecture.LectureId });
                     Context.ApplicationInstance.CompleteRequest();
                 }
                 catch(Exception)

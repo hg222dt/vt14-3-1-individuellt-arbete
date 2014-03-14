@@ -127,7 +127,7 @@ namespace LectureComments.Model.DAL
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.Add("@LectureID", SqlDbType.Int, 4).Value = LectureID;
-
+                    
                     conn.Open();
 
                     using (var reader = cmd.ExecuteReader())
