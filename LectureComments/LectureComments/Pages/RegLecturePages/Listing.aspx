@@ -8,14 +8,13 @@
 </head>
 <body>
     <form id="form1" runat="server">
-
         <asp:Panel ID="SucceedPanel" runat="server" Visible="false" CssClass="AssignmentSuccess">
             <asp:Label ID="SucceedLabel" runat="server" Text="" />
             <a href="#" id="CloseLink">Stäng meddelande</a>
         </asp:Panel>
 
         <div id="showLecturesDiv">
-            <h3>Planerade föreläsningar</h3>
+            <h3>Föreläsningar</h3>
             <asp:HyperLink ID="CreateLectureLink" runat="server"  Text="Lägg till föreläsning" NavigateUrl="<%$ RouteUrl:routename=CreateLecture %>"/>
             <asp:ListView ID="LectureListView" runat="server"
                 ItemType="LectureComments.Model.Lecture"

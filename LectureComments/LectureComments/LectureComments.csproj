@@ -65,6 +65,8 @@
     <Content Include="Pages\RegLecturePages\EditLecture.aspx" />
     <Content Include="Pages\RegLecturePages\LectureDetails.aspx" />
     <Content Include="Pages\RegLecturePages\Listing.aspx" />
+    <Content Include="Pages\RegLecturePages\AddToThread.aspx" />
+    <Content Include="Pages\RegLecturePages\ViewQuestions.aspx" />
     <Content Include="Pages\Shared\error.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -72,6 +74,7 @@
     <Compile Include="App_Infrastructure\MyValidationExtension.cs" />
     <Compile Include="App_Infrastructure\PageExtensions.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Model\Comment.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -89,9 +92,11 @@
     <Compile Include="LecturePage.aspx.designer.cs">
       <DependentUpon>LecturePage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Model\DAL\ThreadDAL.cs" />
     <Compile Include="Model\Lecture.cs" />
     <Compile Include="Model\DAL\LectureDAL.cs" />
     <Compile Include="Model\Service.cs" />
+    <Compile Include="Model\Thread.cs" />
     <Compile Include="Pages\RegLecturePages\CreateLecture.aspx.cs">
       <DependentUpon>CreateLecture.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -126,6 +131,20 @@
     </Compile>
     <Compile Include="Pages\RegLecturePages\Listing.aspx.designer.cs">
       <DependentUpon>Listing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegLecturePages\AddToThread.aspx.cs">
+      <DependentUpon>AddToThread.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RegLecturePages\AddToThread.aspx.designer.cs">
+      <DependentUpon>AddToThread.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegLecturePages\ViewQuestions.aspx.cs">
+      <DependentUpon>ViewQuestions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RegLecturePages\ViewQuestions.aspx.designer.cs">
+      <DependentUpon>ViewQuestions.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Shared\error.aspx.cs">
       <DependentUpon>error.aspx</DependentUpon>

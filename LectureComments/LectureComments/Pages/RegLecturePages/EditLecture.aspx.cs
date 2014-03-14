@@ -56,7 +56,7 @@ namespace LectureComments.Pages.RegLecturePages
 
                     Page.SetTempData("SuccessMessage", "Föreläsningen uppdaterades.");
                     Response.RedirectToRoute("DetailsLecture", new { id = lecture.LectureId });
-                    //Context.ApplicationInstance.CompleteRequest();
+                    Context.ApplicationInstance.CompleteRequest();
                 }
             }
             catch (Exception)

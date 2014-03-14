@@ -21,5 +21,7 @@ namespace LectureComments.Model
 
         [Required(ErrorMessage = "Ange namn på lärare")]
         public string TeacherName { get; set; }
+
+        public string VideoUrl { get; set; }
     }
 }

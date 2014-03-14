@@ -40,5 +40,10 @@ namespace LectureComments.Pages.RegLecturePages
                 return null;
             }
         }
+
+        public IEnumerable<Thread> ThreadListView_GetData()
+        {
+            return Service.getThread();
+        }
     }
 }

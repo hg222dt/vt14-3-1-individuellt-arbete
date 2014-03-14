@@ -18,6 +18,14 @@ namespace LectureComments.Model
             get { return _lectureDAL ?? (_lectureDAL = new LectureDAL()); }
         }
 
+        private ThreadDAL _threadDAL;
+
+        //Fält som skapar objekt i dataåtkomstklassen. Och koppplar referns till detta.
+        private ThreadDAL ThreadDAL
+        {
+            get { return _threadDAL ?? (_threadDAL = new ThreadDAL()); }
+        }
+
         //Hätar alla Föreläsningar från DAL.
         public IEnumerable<Lecture> getLectures()
         {
@@ -52,6 +60,11 @@ namespace LectureComments.Model
         public void DeleteLecture(int id)
         {
             LectureDAL.DeleteLecture(id);
+        }
+
+        public void StartThread(Thread Thread)
+        {
+            ThreadDAL.StartThread(Thread);
         }
 
     }

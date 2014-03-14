@@ -4,11 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.ModelBinding;
 using LectureComments.Model;
 
 namespace LectureComments.Pages.RegLecturePages
 {
-    public partial class Create : System.Web.UI.Page
+    public partial class AddToThread : System.Web.UI.Page
     {
         private Service _service;
 
@@ -22,18 +23,20 @@ namespace LectureComments.Pages.RegLecturePages
 
         }
 
-        public void CreateLectureForm_InsertItem(Lecture Lecture)
+        public void AddToThreadForm_InsertItem(Thread Thread, [RouteData]int id)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 try
                 {
-                    Service.SaveLecture(Lecture);
-                    Page.SetTempData("SuccessMessage", "Föreläsningen lades till!");
-                    Response.RedirectToRoute("LectureListing", new { id = Lecture.LectureId });
+                    Thread.LectureID = id;
+                    Service.StartThread(Thread);
+                    Page.SetTempData("SuccessMessage", "Frågan har skickats!");
+                    //Response.RedirectToRoute("LectureListing", new { id = Lecture.LectureId });
+                    //Bara ha en frågningen i en popup istället, som kan stängas sen.
                     Context.ApplicationInstance.CompleteRequest();
                 }
-                catch(Exception)
+                catch (Exception)
                 {
                     ModelState.AddModelError(String.Empty,
                         "Ett fel inträffade när föreläsning skulle läggas till.");

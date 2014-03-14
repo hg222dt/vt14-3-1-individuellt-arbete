@@ -49,9 +49,22 @@
                     <asp:HyperLink runat="server" Text="Uppdatera" NavigateUrl='<%# GetRouteUrl("EditLecture", new { id = Item.LectureId }) %>' />
                     <asp:HyperLink runat="server" Text="Radera föreläsning" NavigateUrl='<%# GetRouteUrl("DeleteLecture", new { id = Item.LectureId }) %>' />
                     <asp:HyperLink runat="server" Text="Tillbaka till överblick" NavigateUrl='<%# GetRouteUrl("LectureListing", null)%>' />
+                    
+                    <asp:HyperLink ID="CommentLink" runat="server" NavigateUrl='<%# GetRouteUrl("AddToThread", new{ id = Item.LectureId})  %>' Text="Ställ en fråga" />
+                </div>
+                <div class="video-field">
+                    <asp:Literal ID="Literal1" runat="server" Text="<%#: Item.VideoUrl %>" />
                 </div>
             </ItemTemplate>
         </asp:FormView>
+
+        <asp:FormView ID="FormView1" runat="server">
+
+
+
+        </asp:FormView>
+
+
     </div>
     </form>
     <script type="text/javascript">

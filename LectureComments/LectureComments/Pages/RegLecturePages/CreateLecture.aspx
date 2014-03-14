@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <h3>Ny kund!</h3>
+            <h3>Ny föreläsning!</h3>
             <asp:FormView ID="CreateLectureForm" runat="server"
                 ItemType="LectureComments.Model.Lecture"
                 InsertMethod="CreateLectureForm_InsertItem"
@@ -41,7 +41,8 @@
                         <asp:TextBox ID="TeacherNameTB" runat="server" Text='<%# BindItem.TeacherName %>' />
                     </div>
                     <div>
-                        <asp:Button ID="SaveButton" runat="server" Text="Lägg till föreläsning" CommandName="Insert" />
+                        <asp:LinkButton runat="server" Text="Lägg till föreläsning" CommandName="Insert" />
+                        <asp:HyperLink runat="server" Text="Avbryt" NavigateUrl='<%# GetRouteUrl("LectureListing", null ) %>' />
                     </div>
                 </InsertItemTemplate>
             </asp:FormView>
