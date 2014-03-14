@@ -67,5 +67,9 @@ namespace LectureComments.Model
             ThreadDAL.StartThread(Thread);
         }
 
+        public IEnumerable<Thread> getThreadByID(int LectureID)
+        {
+            return ThreadDAL.getThreadByID(LectureID);
+        }
     }
 }
