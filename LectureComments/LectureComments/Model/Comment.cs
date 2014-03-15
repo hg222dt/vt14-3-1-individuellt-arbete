@@ -14,5 +14,9 @@ namespace LectureComments.Model
         public string Author { get; set; }
 
         public int DiscRowID { get; set; }
+
+        public string Date { get; set; }
+
+        public int LectureID { get; set; }
     }
 }

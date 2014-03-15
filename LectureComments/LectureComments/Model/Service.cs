@@ -51,6 +51,14 @@ namespace LectureComments.Model
             return ThreadDAL.GetQuestionById(QuestionID);
         }
 
+        public Comment GetCommentById(int DiscRowID)
+        {
+            return DiscRowDAL.GetCommentById(DiscRowID);
+        }
+
+
+
+
         public void SaveLecture(Lecture lecture)
         {
             ICollection<ValidationResult> validationResults;
@@ -107,7 +115,7 @@ namespace LectureComments.Model
             }
             else
             {
-               // DiscRowDAL.UpdateComment(Comment);
+                DiscRowDAL.UpdateDiscRow(Comment);
             }
         }
     }

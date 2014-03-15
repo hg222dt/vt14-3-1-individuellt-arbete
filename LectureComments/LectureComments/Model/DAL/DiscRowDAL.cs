@@ -69,6 +69,80 @@ namespace LectureComments.Model.DAL
             }
         }
 
+        public void UpdateDiscRow(Comment Comment)
+        {
+            using (var conn = CreateConnection())
+            {
+                try
+                {
+                    var cmd = new SqlCommand("appSchema.usp_UpdateComment", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@DiscText", SqlDbType.NVarChar, 300).Value = Comment.DiscText;
+                    cmd.Parameters.Add("@Author", SqlDbType.NVarChar, 40).Value = Comment.Author;
+                    cmd.Parameters.Add("@DiscRowID", SqlDbType.Int, 4).Value = Comment.DiscRowID;
+                    cmd.Parameters.Add("@ThreadID", SqlDbType.Int, 4).Value = Comment.ThreadID;
+                    cmd.Parameters.Add("@Date", SqlDbType.SmallDateTime).Value = Comment.Date;
+
+                    conn.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+                catch
+                {
+                    throw new ApplicationException("An error occured while adding comment to database.");
+                }
+            }
+        }
+
+        public Comment GetCommentById(int DiscRowID)
+        {
+            using (var conn = CreateConnection())
+            {
+                try
+                {
+                    var cmd = new SqlCommand("appSchema.usp_GetDiscRow", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@DiscRowID", SqlDbType.Int, 4).Value = DiscRowID;
+
+                    conn.Open();
+
+                    using (var reader = cmd.ExecuteReader())
+                    {          
+                        var discRowIdIndex = reader.GetOrdinal("DiscRowID");
+                        var discTextIndex = reader.GetOrdinal("DiscText");
+                        var dateIndex = reader.GetOrdinal("Date");
+                        var lectureIdIndex = reader.GetOrdinal("LectureID");
+                        //var timecodeIndex = reader.GetOrdinal("Timecode");
+                        var authorIndex = reader.GetOrdinal("Author");
+                        var threadIdIndex = reader.GetOrdinal("ThreadID");
+
+                        if (reader.Read())
+                        {
+                            return new Comment
+                            {
+                                LectureID = reader.GetInt32(lectureIdIndex),
+                                ThreadID = reader.GetInt32(threadIdIndex),
+                                DiscRowID = reader.GetInt32(discRowIdIndex),
+                                DiscText = reader.GetString(discTextIndex),
+                                Author = reader.GetString(authorIndex),
+                                Date = reader.GetString(dateIndex),
+                                //Timecode = reader.GetString(timecodeIndex)
+                            };
+                        }
+                    }
+
+                    return null;
+                }
+                catch
+                {
+                    throw new ApplicationException("An error occured while retriving comment data.");
+                }
+            }
+
+        }
+
 
     }
 }

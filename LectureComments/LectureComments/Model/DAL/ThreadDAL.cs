@@ -92,6 +92,7 @@ namespace LectureComments.Model.DAL
                         var dateIndex = reader.GetOrdinal("Date");
                         var authorNameIndex = reader.GetOrdinal("Author");
                         var timecodeIndex = reader.GetOrdinal("Timecode");
+                        var discRowIdIndex = reader.GetOrdinal("DiscRowID");
 
                         while (reader.Read())
                         {
@@ -102,7 +103,8 @@ namespace LectureComments.Model.DAL
                                 QuestionText = reader.GetString(discTextIndex),
                                 Date = reader.GetString(dateIndex),
                                 Author = reader.GetString(authorNameIndex),
-                                Timecode = reader.GetString(timecodeIndex)
+                                Timecode = reader.GetString(timecodeIndex),
+                                DiscRowID = reader.GetInt32(discRowIdIndex)
                             });
                         }
                     }

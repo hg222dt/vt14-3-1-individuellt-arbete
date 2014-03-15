@@ -63,6 +63,7 @@
     <Content Include="Pages\RegLecturePages\CreateLecture.aspx" />
     <Content Include="Pages\RegLecturePages\Delete.aspx" />
     <Content Include="Pages\RegLecturePages\AddComment.aspx" />
+    <Content Include="Pages\RegLecturePages\EditComment.aspx" />
     <Content Include="Pages\RegLecturePages\EditLecture.aspx" />
     <Content Include="Pages\RegLecturePages\LectureDetails.aspx" />
     <Content Include="Pages\RegLecturePages\Listing.aspx" />
@@ -120,6 +121,13 @@
     </Compile>
     <Compile Include="Pages\RegLecturePages\AddComment.aspx.designer.cs">
       <DependentUpon>AddComment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegLecturePages\EditComment.aspx.cs">
+      <DependentUpon>EditComment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RegLecturePages\EditComment.aspx.designer.cs">
+      <DependentUpon>EditComment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\RegLecturePages\EditLecture.aspx.cs">
       <DependentUpon>EditLecture.aspx</DependentUpon>

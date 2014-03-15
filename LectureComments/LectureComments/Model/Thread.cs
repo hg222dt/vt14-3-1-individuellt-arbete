@@ -20,5 +20,6 @@ namespace LectureComments.Model
 
         public string Date { get; set; }
 
+        public int DiscRowID { get; set; }
     }
 }

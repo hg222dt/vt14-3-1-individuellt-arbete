@@ -71,6 +71,9 @@
                         <th>
                             Tid i video
                         </th>
+                        <th>
+                            Författare
+                        </th>
                     </tr>
 
                     <asp:PlaceHolder ID="itemPlaceHolder" runat="server"></asp:PlaceHolder>
@@ -85,36 +88,17 @@
                         <asp:Label ID="Label2" runat="server" Text='<%#: Item.Timecode %>' />
                     </td>
                     <td>
+                        <asp:Label ID="Label3" runat="server" Text='<%#: Item.Author %>' />
+                    </td>
+                    <td>
                         <asp:HyperLink runat="server" Text="Svara" NavigateUrl='<%# GetRouteUrl("AddComment", new { id = Item.ThreadID })%>' Target="_blank" />
+                        <asp:HyperLink runat="server" Text="Uppdatera kommentar" NavigateUrl='<%# GetRouteUrl("EditComment", new { id = Item.DiscRowID })%>' Target="_blank" />
+                        <%--Lägg in en till variabel som håller reda på DiscRowID--%>
                     </td>
                 </tr>
             </ItemTemplate>
             <EmptyDataTemplate>
             </EmptyDataTemplate>
-           <%-- <EditItemTemplate>
-                <tr>
-                    <td>
-                      
-                        <asp:TextBox ID="UpdateQuestionTB" runat="server" Visible="true" Text='<%#: BindItem.QuestionText %>' MaxLength="50" />
-                        <asp:RequiredFieldValidator 
-                            ID="RequiredFieldValidator1" 
-                            runat="server" 
-                            ControlToValidate="UpdateDiscTextTB" 
-                            ErrorMessage="Du får inte lämna frågan tom." 
-                            ValidationGroup="EditGroup" 
-                            Display="None" />
-                    </td>
-                    <td>
-
-                    </td>
-                    <td>
-                        <asp:LinkButton CommandName="Update" runat="server" Text="Uppdatera" />
-                    </td>
-                    <td>
-                        <asp:LinkButton CommandName="Cancel" runat="server" Text="Avbryt" CausesValidation="false" />
-                    </td>
-                </tr>
-            </EditItemTemplate>--%>
         </asp:ListView>
 
     </div>
