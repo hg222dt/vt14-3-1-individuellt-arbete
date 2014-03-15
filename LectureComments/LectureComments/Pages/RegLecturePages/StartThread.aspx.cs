@@ -9,7 +9,7 @@ using LectureComments.Model;
 
 namespace LectureComments.Pages.RegLecturePages
 {
-    public partial class AddToThread : System.Web.UI.Page
+    public partial class StartThread : System.Web.UI.Page
     {
         private Service _service;
 

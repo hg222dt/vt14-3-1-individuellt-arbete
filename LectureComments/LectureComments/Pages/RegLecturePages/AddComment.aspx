@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddToThread.aspx.cs" Inherits="LectureComments.Pages.RegLecturePages.AddToThread" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddComment.aspx.cs" Inherits="LectureComments.Pages.RegLecturePages.AddComment" %>
 
 <!DOCTYPE html>
 
@@ -14,32 +14,26 @@
             <a href="#" id="CloseLink">Tillbaka till föreläsning</a>
         </asp:Panel>
         <asp:FormView ID="CreateLectureForm" runat="server"
-            ItemType="LectureComments.Model.Thread"
-            InsertMethod="AddToThreadForm_InsertItem"
+            ItemType="LectureComments.Model.Comment"
+            InsertMethod="AddCommentForm_InsertItem"
             DefaultMode="Insert"
             RenderOuterTable="false">
             <InsertItemTemplate>
-                <h3>Ställ en fråga!</h3>
                 <div>
-                    <label>Fråga</label>
+                    <label>Svara på tråd!</label>
                 </div>
                 <div>
-                    <asp:TextBox ID="QuestionTextTB" runat="server" Text='<%# BindItem.QuestionText %>' />
+                    <asp:TextBox ID="QuestionTextTB" runat="server" Text='<%# BindItem.DiscText %>' />
                 </div>
-                <div>
-                    <label>Tidpunkt i video</label>
-                </div>
-                <div>
-                    <asp:TextBox ID="TimeCodeTB" runat="server" Text='<%# BindItem.Timecode %>' />
-                </div>
-                <div>
+                 <div>
                     <label>Ditt namn</label>
                 </div>
                 <div>
-                    <asp:TextBox ID="AuthorTB" runat="server" Text='<%# BindItem.Author %>' />
+                    <asp:TextBox ID="AuthorNameTB" runat="server" Text='<%# BindItem.Author %>' />
                 </div>
                 <div>
-                    <asp:LinkButton runat="server" Text="Skicka fråga!" CommandName="Insert" />
+                    <asp:LinkButton runat="server" Text="Skicka kommentar!" CommandName="Insert" />
+                    <a href="#" id="CloseLink2">Avbryt fråga</a>
                 </div>
             </InsertItemTemplate>
         </asp:FormView>
@@ -49,7 +43,12 @@
         setTimeout(function () {
             var closeMessageLink = document.getElementById("CloseLink");
             var statusMessageDiv = document.getElementById("SucceedPanel");
-            
+            var cancelQuestion = document.getElementById("CloseLink2");
+
+            cancelQuestion.onclick = function () {
+                close();
+            }
+
             closeMessageLink.onclick = function () {
                 close();
             }
@@ -57,3 +56,4 @@
     </script>
 </body>
 </html>
+

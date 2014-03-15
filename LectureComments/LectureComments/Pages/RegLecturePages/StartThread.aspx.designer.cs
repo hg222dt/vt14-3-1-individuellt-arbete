@@ -10,7 +10,7 @@
 namespace LectureComments.Pages.RegLecturePages {
     
     
-    public partial class AddToThread {
+    public partial class StartThread {
         
         /// <summary>
         /// form1 control.

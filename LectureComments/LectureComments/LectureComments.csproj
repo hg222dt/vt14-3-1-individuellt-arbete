@@ -62,10 +62,11 @@
     <Content Include="LecturePage.aspx" />
     <Content Include="Pages\RegLecturePages\CreateLecture.aspx" />
     <Content Include="Pages\RegLecturePages\Delete.aspx" />
+    <Content Include="Pages\RegLecturePages\AddComment.aspx" />
     <Content Include="Pages\RegLecturePages\EditLecture.aspx" />
     <Content Include="Pages\RegLecturePages\LectureDetails.aspx" />
     <Content Include="Pages\RegLecturePages\Listing.aspx" />
-    <Content Include="Pages\RegLecturePages\AddToThread.aspx" />
+    <Content Include="Pages\RegLecturePages\StartThread.aspx" />
     <Content Include="Pages\RegLecturePages\ViewQuestions.aspx" />
     <Content Include="Pages\Shared\error.aspx" />
     <Content Include="Web.config" />
@@ -92,9 +93,11 @@
     <Compile Include="LecturePage.aspx.designer.cs">
       <DependentUpon>LecturePage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Model\DAL\DiscRowDAL.cs" />
     <Compile Include="Model\DAL\ThreadDAL.cs" />
     <Compile Include="Model\Lecture.cs" />
     <Compile Include="Model\DAL\LectureDAL.cs" />
+    <Compile Include="Model\Question.cs" />
     <Compile Include="Model\Service.cs" />
     <Compile Include="Model\Thread.cs" />
     <Compile Include="Pages\RegLecturePages\CreateLecture.aspx.cs">
@@ -110,6 +113,13 @@
     </Compile>
     <Compile Include="Pages\RegLecturePages\Delete.aspx.designer.cs">
       <DependentUpon>Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegLecturePages\AddComment.aspx.cs">
+      <DependentUpon>AddComment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RegLecturePages\AddComment.aspx.designer.cs">
+      <DependentUpon>AddComment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\RegLecturePages\EditLecture.aspx.cs">
       <DependentUpon>EditLecture.aspx</DependentUpon>
@@ -132,12 +142,12 @@
     <Compile Include="Pages\RegLecturePages\Listing.aspx.designer.cs">
       <DependentUpon>Listing.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RegLecturePages\AddToThread.aspx.cs">
-      <DependentUpon>AddToThread.aspx</DependentUpon>
+    <Compile Include="Pages\RegLecturePages\StartThread.aspx.cs">
+      <DependentUpon>StartThread.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\RegLecturePages\AddToThread.aspx.designer.cs">
-      <DependentUpon>AddToThread.aspx</DependentUpon>
+    <Compile Include="Pages\RegLecturePages\StartThread.aspx.designer.cs">
+      <DependentUpon>StartThread.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\RegLecturePages\ViewQuestions.aspx.cs">
       <DependentUpon>ViewQuestions.aspx</DependentUpon>

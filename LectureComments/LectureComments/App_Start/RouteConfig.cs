@@ -15,7 +15,8 @@ namespace LectureComments.App_Start
             routes.MapPageRoute("DetailsLecture",   "forelasningar/{id}",           "~/Pages/RegLecturePages/LectureDetails.aspx");
             routes.MapPageRoute("EditLecture",      "forelasning/{id}/redigera",    "~/Pages/RegLecturePages/EditLecture.aspx");
             routes.MapPageRoute("DeleteLecture",    "forelasning/{id}/radera",      "~/Pages/RegLecturePages/Delete.aspx");
-            routes.MapPageRoute("AddToThread",     "forelasning/{id}/fraga",       "~/Pages/RegLecturePages/AddToThread.aspx");
+            routes.MapPageRoute("AddToThread",      "forelasning/{id}/fraga",       "~/Pages/RegLecturePages/StartThread.aspx");
+            routes.MapPageRoute("AddComment",       "forelasning/kommentera/{id}",  "~/Pages/RegLecturePages/AddComment.aspx");
             
             routes.MapPageRoute("Error",            "serverfel",                    "~/Pages/Shared/Error.aspx");
             

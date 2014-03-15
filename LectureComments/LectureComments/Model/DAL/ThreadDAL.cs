@@ -77,7 +77,7 @@ namespace LectureComments.Model.DAL
                 {
                     var thread = new List<Thread>(100);
 
-                    var cmd = new SqlCommand("appSchema.usp_GetWholeThread", conn);
+                    var cmd = new SqlCommand("appSchema.usp_GetThreadsInLecture", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.Add("@LectureID", SqlDbType.Int, 4).Value = LectureID;
@@ -167,7 +167,7 @@ namespace LectureComments.Model.DAL
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.Add("@DiscRowID", SqlDbType.Int, 4).Value = Question.DiscText;
-                    cmd.Parameters.Add("@QuestionText", SqlDbType.NVarChar, 300).Value = Question.DiscText;
+                    cmd.Parameters.Add("@DiscText", SqlDbType.NVarChar, 300).Value = Question.DiscText;
 
                     conn.Open();
 

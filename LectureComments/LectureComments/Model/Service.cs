@@ -26,6 +26,15 @@ namespace LectureComments.Model
             get { return _threadDAL ?? (_threadDAL = new ThreadDAL()); }
         }
 
+        //Fält som refererar till dataåtkomstlagret
+        private DiscRowDAL _discRowDAL;
+
+        //Fält som skapar objekt i dataåtkomstklassen. Och koppplar referns till detta.
+        private DiscRowDAL DiscRowDAL
+        {
+            get { return _discRowDAL ?? (_discRowDAL = new DiscRowDAL()); }
+        }
+
         //Hätar alla Föreläsningar från DAL.
         public IEnumerable<Lecture> getLectures()
         {
@@ -39,7 +48,7 @@ namespace LectureComments.Model
 
         public Question GetQuestion(int QuestionID)
         {
-            return ThreadDAL.GetQuestionById(QuestionID)
+            return ThreadDAL.GetQuestionById(QuestionID);
         }
 
         public void SaveLecture(Lecture lecture)
@@ -80,6 +89,26 @@ namespace LectureComments.Model
         public IEnumerable<Thread> getThreadByID(int LectureID)
         {
             return ThreadDAL.getThreadByID(LectureID);
+        }
+
+        public void SaveComment (Comment Comment)
+        {
+            ICollection<ValidationResult> validationResults;
+            if (!Comment.Validate(out validationResults))
+            {
+                var ex = new ValidationException("Objektet klararde inte valideringen.");
+                ex.Data.Add("ValidationResults", validationResults);
+                throw ex;
+            }
+
+            if (Comment.DiscRowID == 0)
+            {
+                DiscRowDAL.InsertDiscRow(Comment);
+            }
+            else
+            {
+               // DiscRowDAL.UpdateComment(Comment);
+            }
         }
     }
 }

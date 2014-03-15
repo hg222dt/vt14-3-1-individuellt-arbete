@@ -53,7 +53,7 @@
                     <asp:HyperLink ID="CommentLink" runat="server" NavigateUrl='<%# GetRouteUrl("AddToThread", new{ id = Item.LectureId})  %>' Text="Ställ en fråga" Target="_blank"/>
                 </div>
                 <div class="video-field">
-                    <asp:Literal ID="Literal1" runat="server" Text="<%#: Item.VideoUrl %>" />
+                    <%#: Item.VideoUrl %>
                 </div>
             </ItemTemplate>
         </asp:FormView>
@@ -61,7 +61,6 @@
         <asp:ListView ID="ThreadListView" runat="server"
             ItemType="LectureComments.Model.Thread"
             SelectMethod="ThreadListView_GetData"
-            UpdateMethod="ThreadListView_UpdateItem"
             DataKeyNames="ThreadID">
             <LayoutTemplate>
                 <table>
@@ -85,14 +84,17 @@
                     <td>
                         <asp:Label ID="Label2" runat="server" Text='<%#: Item.Timecode %>' />
                     </td>
+                    <td>
+                        <asp:HyperLink runat="server" Text="Svara" NavigateUrl='<%# GetRouteUrl("AddComment", new { id = Item.ThreadID })%>' />
+                    </td>
                 </tr>
             </ItemTemplate>
             <EmptyDataTemplate>
             </EmptyDataTemplate>
-            <EditItemTemplate>
+           <%-- <EditItemTemplate>
                 <tr>
                     <td>
-                        <%-- Kontroller för att editera och validera fråga. --%>
+                      
                         <asp:TextBox ID="UpdateQuestionTB" runat="server" Visible="true" Text='<%#: BindItem.QuestionText %>' MaxLength="50" />
                         <asp:RequiredFieldValidator 
                             ID="RequiredFieldValidator1" 
@@ -112,7 +114,7 @@
                         <asp:LinkButton CommandName="Cancel" runat="server" Text="Avbryt" CausesValidation="false" />
                     </td>
                 </tr>
-            </EditItemTemplate>
+            </EditItemTemplate>--%>
         </asp:ListView>
 
     </div>
