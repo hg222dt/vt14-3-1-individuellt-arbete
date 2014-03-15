@@ -53,15 +53,20 @@ namespace LectureComments.Pages.RegLecturePages
                 if (TryUpdateModel(comment))
                 {
                     Service.SaveComment(comment);
-
-                    Page.SetTempData("SuccessMessage", "Föreläsningen uppdaterades.");
-                    Response.RedirectToRoute("DetailsLecture", new { id = comment.LectureID});
+                    Page.SetTempData("SuccessMessage", "Kommentaren uppdaterades!");
                     Context.ApplicationInstance.CompleteRequest();
                 }
             }
             catch (Exception)
             {
                 ModelState.AddModelError(String.Empty, "Fel inträffade då kunden skulle uppdateras.");
+            }
+
+            if (Page.PeekTempData("SuccessMessage") as string != null)
+            {
+                SucceedLabel.Text = Page.GetTempData("SuccessMessage") as string;
+                SucceedPanel.Visible = true;
+                UpdateLectureForm.Visible = false;
             }
         }
     }

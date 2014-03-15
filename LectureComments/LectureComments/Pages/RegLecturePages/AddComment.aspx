@@ -46,10 +46,6 @@
             cancelQuestion.onclick = function () {
                 close();
             }
-
-            closeMessageLink.onclick = function () {
-                close();
-            }
         }, 1000);
     </script>
 </body>

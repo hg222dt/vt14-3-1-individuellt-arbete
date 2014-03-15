@@ -92,15 +92,14 @@
                     </td>
                     <td>
                         <asp:HyperLink runat="server" Text="Svara" NavigateUrl='<%# GetRouteUrl("AddComment", new { id = Item.ThreadID })%>' Target="_blank" />
-                        <asp:HyperLink runat="server" Text="Uppdatera kommentar" NavigateUrl='<%# GetRouteUrl("EditComment", new { id = Item.DiscRowID })%>' Target="_blank" />
-                        <%--Lägg in en till variabel som håller reda på DiscRowID--%>
+                        <asp:HyperLink runat="server" Text="Uppdatera" NavigateUrl='<%# GetRouteUrl("EditComment", new { id = Item.DiscRowID })%>' Target="_blank" />
+                        <asp:HyperLink runat="server" Text="Radera" NavigateUrl='<%# GetRouteUrl("DeleteComment", new { id = Item.DiscRowID }) %>' Target="_blank" />
                     </td>
                 </tr>
             </ItemTemplate>
             <EmptyDataTemplate>
             </EmptyDataTemplate>
         </asp:ListView>
-
     </div>
     </form>
     <script type="text/javascript">

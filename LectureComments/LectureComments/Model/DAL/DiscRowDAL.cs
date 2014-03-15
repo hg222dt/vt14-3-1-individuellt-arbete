@@ -95,6 +95,28 @@ namespace LectureComments.Model.DAL
             }
         }
 
+        public void DeleteDiscRow(int discRowID)
+        {
+            using (var conn = CreateConnection())
+            {
+                try
+                {
+                    var cmd = new SqlCommand("appSchema.usp_EraseComment", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@DiscRowID", SqlDbType.Int, 4).Value = discRowID;
+
+                    conn.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+                catch
+                {
+                    throw new ApplicationException("An error occured while adding comment to database.");
+                }
+            }
+        }
+
         public Comment GetCommentById(int DiscRowID)
         {
             using (var conn = CreateConnection())

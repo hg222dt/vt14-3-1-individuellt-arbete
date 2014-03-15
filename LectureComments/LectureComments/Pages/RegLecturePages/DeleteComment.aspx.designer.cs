@@ -10,7 +10,7 @@
 namespace LectureComments.Pages.RegLecturePages {
     
     
-    public partial class EditComment {
+    public partial class DeleteComment {
         
         /// <summary>
         /// form1 control.
@@ -40,12 +40,21 @@ namespace LectureComments.Pages.RegLecturePages {
         protected global::System.Web.UI.WebControls.Label SucceedLabel;
         
         /// <summary>
-        /// UpdateLectureForm control.
+        /// DeleteFormPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView UpdateLectureForm;
+        protected global::System.Web.UI.WebControls.Panel DeleteFormPanel;
+        
+        /// <summary>
+        /// DeleteLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton DeleteLink;
     }
 }

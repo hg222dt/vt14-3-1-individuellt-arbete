@@ -118,5 +118,10 @@ namespace LectureComments.Model
                 DiscRowDAL.UpdateDiscRow(Comment);
             }
         }
+
+        public void DeleteComment(int id)
+        {
+            DiscRowDAL.DeleteDiscRow(id);
+        }
     }
 }

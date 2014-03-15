@@ -7,45 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LectureComments.Pages.RegLecturePages {
+namespace LectureComments.Pages.Shared {
     
     
-    public partial class EditComment {
+    public partial class Site1 {
         
         /// <summary>
-        /// form1 control.
+        /// head control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
-        /// SucceedPanel control.
+        /// pageForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel SucceedPanel;
+        protected global::System.Web.UI.HtmlControls.HtmlForm pageForm;
         
         /// <summary>
-        /// SucceedLabel control.
+        /// ContentPlaceHolder1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label SucceedLabel;
-        
-        /// <summary>
-        /// UpdateLectureForm control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView UpdateLectureForm;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
     }
 }
