@@ -11,7 +11,6 @@
     <div>
         <asp:Panel ID="SucceedPanel" runat="server" Visible="false" CssClass="AssignmentSuccess">
             <asp:Label ID="SucceedLabel" runat="server" Text="" />
-            <a href="#" id="CloseLink">Tillbaka till föreläsning</a>
         </asp:Panel>
         <asp:FormView ID="CreateLectureForm" runat="server"
             ItemType="LectureComments.Model.Comment"
@@ -33,15 +32,14 @@
                 </div>
                 <div>
                     <asp:LinkButton runat="server" Text="Skicka kommentar!" CommandName="Insert" />
-                    <a href="#" id="CloseLink2">Avbryt fråga</a>
                 </div>
             </InsertItemTemplate>
         </asp:FormView>
+        <a href="#" id="CloseLink2">Tillbaka till föreläsning</a>
     </div>
     </form>
     <script type="text/javascript">
         setTimeout(function () {
-            var closeMessageLink = document.getElementById("CloseLink");
             var statusMessageDiv = document.getElementById("SucceedPanel");
             var cancelQuestion = document.getElementById("CloseLink2");
 

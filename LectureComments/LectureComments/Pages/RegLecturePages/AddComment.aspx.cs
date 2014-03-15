@@ -33,7 +33,7 @@ namespace LectureComments.Pages.RegLecturePages
                     Service.SaveComment(Comment);
                     Page.SetTempData("SuccessMessage", "Kommentaren har skickats!");
                     //Response.RedirectToRoute("LectureListing", new { id = Lecture.LectureId });
-                    //Bara ha en frågningen i en popup istället, som kan stängas sen.
+                    
                     Context.ApplicationInstance.CompleteRequest();
                 }
                 catch (Exception)
@@ -52,4 +52,3 @@ namespace LectureComments.Pages.RegLecturePages
         }
     }
 }
-

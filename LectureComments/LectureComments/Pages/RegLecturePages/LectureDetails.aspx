@@ -85,7 +85,7 @@
                         <asp:Label ID="Label2" runat="server" Text='<%#: Item.Timecode %>' />
                     </td>
                     <td>
-                        <asp:HyperLink runat="server" Text="Svara" NavigateUrl='<%# GetRouteUrl("AddComment", new { id = Item.ThreadID })%>' />
+                        <asp:HyperLink runat="server" Text="Svara" NavigateUrl='<%# GetRouteUrl("AddComment", new { id = Item.ThreadID })%>' Target="_blank" />
                     </td>
                 </tr>
             </ItemTemplate>
