@@ -7,36 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LectureComments.Pages.Shared {
+namespace LectureComments.Pages.RegLecturePages {
     
     
-    public partial class Site1 {
+    public partial class EditLecture2 {
         
         /// <summary>
-        /// TitleContentPlaceHolder control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder TitleContentPlaceHolder;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// MainContentPlaceHolder control.
+        /// UpdateLectureForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContentPlaceHolder;
-        
-        /// <summary>
-        /// ScriptContentPlaceHolder control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ScriptContentPlaceHolder;
+        protected global::System.Web.UI.WebControls.FormView UpdateLectureForm;
     }
 }

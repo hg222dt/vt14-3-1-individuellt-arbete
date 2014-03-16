@@ -7,36 +7,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LectureComments.Pages.Shared {
+namespace LectureComments.Pages.RegLecturePages {
     
     
-    public partial class Site1 {
+    public partial class StartThread2 {
         
         /// <summary>
-        /// TitleContentPlaceHolder control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder TitleContentPlaceHolder;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// MainContentPlaceHolder control.
+        /// SucceedPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContentPlaceHolder;
+        protected global::System.Web.UI.WebControls.Panel SucceedPanel;
         
         /// <summary>
-        /// ScriptContentPlaceHolder control.
+        /// SucceedLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ScriptContentPlaceHolder;
+        protected global::System.Web.UI.WebControls.Label SucceedLabel;
+        
+        /// <summary>
+        /// CreateLectureForm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FormView CreateLectureForm;
     }
 }
