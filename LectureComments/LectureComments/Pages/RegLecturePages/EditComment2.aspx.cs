@@ -31,7 +31,7 @@ namespace LectureComments.Pages.RegLecturePages
             }
             catch (Exception)
             {
-                ModelState.AddModelError(String.Empty, "Fel inträffade då föreläsningen hämtades vid redigering.");
+                ModelState.AddModelError(String.Empty, "Fel inträffade då kommentaren hämtades för redigering.");
                 return null;
             }
         }

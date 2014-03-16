@@ -47,31 +47,5 @@ namespace LectureComments.Pages.RegLecturePages
         {
             return Service.getThreadByID(RouteID);
         }
-
-        //public void ThreadListView_UpdateItem(int QuestionID)
-        //{
-        //    try
-        //    {
-        //        var question = Service.GetThread(QuestionID);
-        //        if (question == null)
-        //        {
-        //            ModelState.AddModelError(String.Empty,
-        //                String.Format("Kommentar {0} hittades inte.", QuestionID));
-        //            return;
-        //        }
-
-        //        if (TryUpdateModel(question))
-        //        {
-        //            Service.UpdateComment(question);
-        //            Session["Status"] = true;
-        //            var status = "Kommentaren har uppdaterats!";
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-        //        ModelState.AddModelError(String.Empty, "Oväntat fel inträffade när föreläsningen skulle uppdateras");
-        //    }
-        //}
-
     }
 }

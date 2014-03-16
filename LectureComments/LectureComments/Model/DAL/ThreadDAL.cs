@@ -64,7 +64,7 @@ namespace LectureComments.Model.DAL
                 }
                 catch
                 {
-                    throw new ApplicationException("An error occured while adding contacts from database.");
+                    throw new ApplicationException("An error occured while adding thread to database.");
                 }
             }
         }
@@ -115,7 +115,7 @@ namespace LectureComments.Model.DAL
                 }
                 catch
                 {
-                    throw new ApplicationException("An error occured while getting lectures from database.");
+                    throw new ApplicationException("An error occured while retrieving thread from database.");
                 }
             }
         }
@@ -154,7 +154,7 @@ namespace LectureComments.Model.DAL
                 }
                 catch
                 {
-                    throw new ApplicationException("An error occured while getting contacts from database.");
+                    throw new ApplicationException("An error occured while retrieving comment from database.");
                 }
             }
         }
@@ -177,7 +177,7 @@ namespace LectureComments.Model.DAL
                 }
                 catch
                 {
-                    throw new ApplicationException("An error occured while adding contacts from database.");
+                    throw new ApplicationException("An error occured while adding comment to database.");
                 }
             }
         }

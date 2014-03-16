@@ -46,7 +46,7 @@ namespace LectureComments.Pages.RegLecturePages
                 {
                     // Hittade inte kunden.
                     ModelState.AddModelError(String.Empty,
-                        String.Format("Kunden med kundnummer {0} hittades inte.", lectureID));
+                        String.Format("Föreläsningen med id {0} hittades inte.", lectureID));
                     return;
                 }
 
@@ -61,7 +61,7 @@ namespace LectureComments.Pages.RegLecturePages
             }
             catch (Exception)
             {
-                ModelState.AddModelError(String.Empty, "Fel inträffade då kunden skulle uppdateras.");
+                ModelState.AddModelError(String.Empty, "Fel inträffade då föreläsningen skulle uppdateras.");
             }
         }
     }

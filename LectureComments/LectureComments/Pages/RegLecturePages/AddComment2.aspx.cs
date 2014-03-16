@@ -32,14 +32,12 @@ namespace LectureComments.Pages.RegLecturePages
                     Comment.ThreadID = id;
                     Service.SaveComment(Comment);
                     Page.SetTempData("SuccessMessage", "Kommentaren har skickats!");
-                    //Response.RedirectToRoute("LectureListing", new { id = Lecture.LectureId });
-
                     Context.ApplicationInstance.CompleteRequest();
                 }
                 catch (Exception)
                 {
                     ModelState.AddModelError(String.Empty,
-                        "Ett fel inträffade när föreläsning skulle läggas till.");
+                        "Ett fel inträffade när kommentaren skulle läggas till.");
                 }
 
                 if (Page.PeekTempData("SuccessMessage") as string != null)

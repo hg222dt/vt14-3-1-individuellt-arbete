@@ -105,6 +105,7 @@ namespace LectureComments.Model.DAL
                     cmd.Parameters.Add("@Teacher", SqlDbType.NVarChar, 50).Value = Lecture.TeacherName;
                     cmd.Parameters.Add("@LectureName", SqlDbType.NVarChar, 50).Value = Lecture.LectureName;
                     cmd.Parameters.Add("@CourseName", SqlDbType.NVarChar, 50).Value = Lecture.CourseName;
+                    cmd.Parameters.Add("@VideoUrl", SqlDbType.NVarChar, 200).Value = Lecture.VideoUrl;
 
                     conn.Open();
 
@@ -112,7 +113,7 @@ namespace LectureComments.Model.DAL
                 }
                 catch
                 {
-                    throw new ApplicationException("An error occured while adding contacts from database.");
+                    throw new ApplicationException("An error occured while adding lectures to database.");
                 }
             }
         }
@@ -157,7 +158,7 @@ namespace LectureComments.Model.DAL
                 }
                 catch
                 {
-                    throw new ApplicationException("An error occured while getting contacts from database.");
+                    throw new ApplicationException("An error occured while getting lectures from database.");
                 }
             }
         }
@@ -178,6 +179,7 @@ namespace LectureComments.Model.DAL
                     cmd.Parameters.Add("@LectureName", SqlDbType.NVarChar, 50).Value = Lecture.LectureName;
                     cmd.Parameters.Add("@CourseName", SqlDbType.NVarChar, 50).Value = Lecture.CourseName;
                     cmd.Parameters.Add("@LectureID", SqlDbType.NVarChar, 50).Value = Lecture.LectureId;
+                    cmd.Parameters.Add("@VideoUrl", SqlDbType.NVarChar, 200).Value = Lecture.VideoUrl;
 
                     conn.Open();
 
@@ -208,7 +210,7 @@ namespace LectureComments.Model.DAL
                 }
                 catch
                 {
-                    throw new ApplicationException("Fel uppkom när i LectureDAL");
+                    throw new ApplicationException("Problem occured while deleting Lecture in database.");
                 }
             }
         }

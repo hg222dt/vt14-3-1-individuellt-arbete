@@ -32,14 +32,12 @@ namespace LectureComments.Pages.RegLecturePages
                     Thread.LectureID = id;
                     Service.StartThread(Thread);
                     Page.SetTempData("SuccessMessage", "Frågan har skickats!");
-                    //Response.RedirectToRoute("LectureListing", new { id = Lecture.LectureId });
-                    //Bara ha en frågningen i en popup istället, som kan stängas sen.
                     Context.ApplicationInstance.CompleteRequest();
                 }
                 catch (Exception)
                 {
                     ModelState.AddModelError(String.Empty,
-                        "Ett fel inträffade när föreläsning skulle läggas till.");
+                        "Ett fel inträffade när föreläsningen skulle läggas till.");
                 }
 
                 if (Page.PeekTempData("SuccessMessage") as string != null)

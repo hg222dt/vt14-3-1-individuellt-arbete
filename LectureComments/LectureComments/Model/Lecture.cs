@@ -26,6 +26,8 @@ namespace LectureComments.Model
         [StringLength(50, ErrorMessage = "Namn på lärare får inte vara mer än 50 tecken långt.")]
         public string TeacherName { get; set; }
 
+        [Required(ErrorMessage = "Ange Url till video på föreläsningen.")]
+        [StringLength(200, ErrorMessage = "Namn på lärare får inte vara mer än 200 tecken långt.")]
         public string VideoUrl { get; set; }
     }
 }

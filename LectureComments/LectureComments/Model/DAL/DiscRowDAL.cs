@@ -90,7 +90,7 @@ namespace LectureComments.Model.DAL
                 }
                 catch
                 {
-                    throw new ApplicationException("An error occured while adding comment to database.");
+                    throw new ApplicationException("An error occured while updating comment in database.");
                 }
             }
         }
@@ -112,7 +112,7 @@ namespace LectureComments.Model.DAL
                 }
                 catch
                 {
-                    throw new ApplicationException("An error occured while adding comment to database.");
+                    throw new ApplicationException("An error occured while deleting comment in database.");
                 }
             }
         }
@@ -159,7 +159,7 @@ namespace LectureComments.Model.DAL
                 }
                 catch
                 {
-                    throw new ApplicationException("An error occured while retriving comment data.");
+                    throw new ApplicationException("An error occured while retriving comment from database.");
                 }
             }
 

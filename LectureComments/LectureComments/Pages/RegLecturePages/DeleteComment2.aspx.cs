@@ -41,7 +41,7 @@ namespace LectureComments.Pages.RegLecturePages
             }
             catch (Exception)
             {
-                ModelState.AddModelError(String.Empty, "Fel inträffade då föreläsningen skulle tas bort");
+                ModelState.AddModelError(String.Empty, "Fel inträffade då kommentaren skulle tas bort");
             }
 
             if (Page.PeekTempData("SuccessMessage") as string != null)

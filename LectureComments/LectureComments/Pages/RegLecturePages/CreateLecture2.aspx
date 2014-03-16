@@ -50,6 +50,13 @@
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Fyll i lärare" ControlToValidate="TeacherNameTB" Display="None"/>
                     </div>
                     <div>
+                        <label>Video-Url</label>
+                    </div>
+                    <div>
+                        <asp:TextBox ID="VideoUrlTB" runat="server" Text='<%# BindItem.VideoUrl %>' />
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Fyll i Url till föreläsningsvideo" ControlToValidate="VideoUrlTB" Display="None"/>
+                    </div>
+                    <div>
                         <asp:LinkButton runat="server" Text="Lägg till föreläsning" CommandName="Insert" />
                         <asp:HyperLink runat="server" Text="Avbryt" NavigateUrl='<%# GetRouteUrl("LectureListing", null ) %>' />
                     </div>

@@ -15,29 +15,35 @@
             SelectMethod="LectureFormView_GetItem"
             RenderOuterTable="false">
             <ItemTemplate>
-                <div class="edit-label">
+                <div>
                     <label for="Name">Namn på föreläsning</label>
                 </div>
-                <div class="edit-field">
+                <div>
                     <%#: Item.LectureName %>
                 </div>
-                <div class="edit-label">
+                <div>
                     <label for="Name">Namn på kurs</label>
                 </div>
-                <div class="edit-field">
+                <div>
                     <%#: Item.CourseName %>
                 </div>
-                <div class="edit-label">
+                <div>
                     <label for="Date">Datum</label>
                 </div>
-                <div class="edit-field">
+                <div>
                     <%#: Item.LectureDate %>
                 </div>
-                <div class="edit-label">
+                <div>
                     <label for="Name">Lärare</label>
                 </div>
-                <div class="edit-field">
+                <div>
                     <%#: Item.TeacherName %>
+                </div>
+                <div>
+                    <label for="Name">Video-Url</label>
+                </div>
+                <div>
+                    <%#: Item.VideoUrl %>
                 </div>
                 <div>
                     <asp:HyperLink runat="server" Text="Uppdatera" NavigateUrl='<%# GetRouteUrl("EditLecture", new { id = Item.LectureId }) %>' />
@@ -47,7 +53,7 @@
                     <asp:HyperLink ID="CommentLink" runat="server" NavigateUrl='<%# GetRouteUrl("AddToThread", new{ id = Item.LectureId})  %>' Text="Ställ en fråga" Target="_blank"/>
                 </div>
                 <div class="video-field">
-                    <%#: Item.VideoUrl %>
+                    <iframe width="560" height="315" src='<%#: Item.VideoUrl %>' frameborder="0" allowfullscreen></iframe>
                 </div>
             </ItemTemplate>
         </asp:FormView>
