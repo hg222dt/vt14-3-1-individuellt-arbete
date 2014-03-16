@@ -123,7 +123,7 @@ namespace LectureComments.Model.DAL
             {
                 try
                 {
-                    var cmd = new SqlCommand("appSchema.usp_GetLectureById", conn);
+                    var cmd = new SqlCommand("appSchema.usp_GetLectureByThreadId", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.Add("@LectureID", SqlDbType.Int, 4).Value = LectureID;
@@ -173,7 +173,7 @@ namespace LectureComments.Model.DAL
                     SqlCommand cmd = new SqlCommand("appSchema.usp_UpdateLecture", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@DateTime", SqlDbType.SmallDateTime).Value = Lecture.LectureDate;
+                    cmd.Parameters.Add("@Date", SqlDbType.Date).Value = Lecture.LectureDate;
                     cmd.Parameters.Add("@TeacherName", SqlDbType.NVarChar, 50).Value = Lecture.TeacherName;
                     cmd.Parameters.Add("@LectureName", SqlDbType.NVarChar, 50).Value = Lecture.LectureName;
                     cmd.Parameters.Add("@CourseName", SqlDbType.NVarChar, 50).Value = Lecture.CourseName;

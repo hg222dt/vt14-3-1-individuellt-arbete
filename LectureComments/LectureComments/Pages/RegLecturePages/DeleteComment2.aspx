@@ -19,7 +19,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ScriptContentPlaceHolder" runat="server">
     <script type="text/javascript">
         setTimeout(function () {
-            var statusMessageDiv = document.getElementById("SucceedPanel");
+            var statusMessageDiv = document.getElementById("MainContentPlaceHolder_SucceedPanel");
             var cancelQuestion = document.getElementById("CloseLink2");
 
             cancelQuestion.onclick = function () {

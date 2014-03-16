@@ -59,7 +59,7 @@ namespace LectureComments.Pages.RegLecturePages
             }
             catch (Exception)
             {
-                ModelState.AddModelError(String.Empty, "Fel inträffade då kunden skulle uppdateras.");
+                ModelState.AddModelError(String.Empty, "Fel inträffade då kommentaren skulle uppdateras.");
             }
 
             if (Page.PeekTempData("SuccessMessage") as string != null)

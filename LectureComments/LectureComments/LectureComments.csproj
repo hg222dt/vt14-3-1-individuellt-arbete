@@ -61,25 +61,25 @@
     <Content Include="LectureRegPage.aspx" />
     <Content Include="LecturePage.aspx" />
     <Content Include="Pages\RegLecturePages\AddComment2.aspx" />
-    <Content Include="Pages\RegLecturePages\CreateLecture.aspx" />
+    <Content Include="Pages\RegLecturePages\OldPages\CreateLecture.aspx" />
     <Content Include="Pages\RegLecturePages\CreateLecture2.aspx" />
-    <Content Include="Pages\RegLecturePages\Delete.aspx" />
-    <Content Include="Pages\RegLecturePages\AddComment.aspx" />
+    <Content Include="Pages\RegLecturePages\OldPages\Delete.aspx" />
+    <Content Include="Pages\RegLecturePages\OldPages\AddComment.aspx" />
     <Content Include="Pages\RegLecturePages\Delete2.aspx" />
-    <Content Include="Pages\RegLecturePages\DeleteComment.aspx" />
+    <Content Include="Pages\RegLecturePages\OldPages\DeleteComment.aspx" />
     <Content Include="Pages\RegLecturePages\DeleteComment2.aspx" />
-    <Content Include="Pages\RegLecturePages\EditComment.aspx" />
+    <Content Include="Pages\RegLecturePages\OldPages\EditComment.aspx" />
     <Content Include="Pages\RegLecturePages\EditComment2.aspx" />
-    <Content Include="Pages\RegLecturePages\EditLecture.aspx" />
+    <Content Include="Pages\RegLecturePages\OldPages\EditLecture.aspx" />
     <Content Include="Pages\RegLecturePages\EditLecture2.aspx" />
-    <Content Include="Pages\RegLecturePages\LectureDetails.aspx" />
+    <Content Include="Pages\RegLecturePages\OldPages\LectureDetails.aspx" />
     <Content Include="Pages\RegLecturePages\LectureDetails2.aspx" />
-    <Content Include="Pages\RegLecturePages\Listing.aspx" />
+    <Content Include="Pages\RegLecturePages\OldPages\Listing.aspx" />
     <Content Include="Pages\RegLecturePages\Listing2.aspx" />
-    <Content Include="Pages\RegLecturePages\StartThread.aspx" />
+    <Content Include="Pages\RegLecturePages\OldPages\StartThread.aspx" />
     <Content Include="Pages\RegLecturePages\StartThread2.aspx" />
-    <Content Include="Pages\RegLecturePages\ViewQuestions.aspx" />
-    <Content Include="Pages\Shared\error.aspx" />
+    <Content Include="Pages\RegLecturePages\OldPages\ViewQuestions.aspx" />
+    <Content Include="Pages\RegLecturePages\OldPages\error.aspx" />
     <Content Include="Pages\Shared\error2.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -121,11 +121,11 @@
     <Compile Include="Pages\RegLecturePages\AddComment2.aspx.designer.cs">
       <DependentUpon>AddComment2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RegLecturePages\CreateLecture.aspx.cs">
+    <Compile Include="Pages\RegLecturePages\OldPages\CreateLecture.aspx.cs">
       <DependentUpon>CreateLecture.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\RegLecturePages\CreateLecture.aspx.designer.cs">
+    <Compile Include="Pages\RegLecturePages\OldPages\CreateLecture.aspx.designer.cs">
       <DependentUpon>CreateLecture.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\RegLecturePages\CreateLecture2.aspx.cs">
@@ -135,18 +135,18 @@
     <Compile Include="Pages\RegLecturePages\CreateLecture2.aspx.designer.cs">
       <DependentUpon>CreateLecture2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RegLecturePages\Delete.aspx.cs">
+    <Compile Include="Pages\RegLecturePages\OldPages\Delete.aspx.cs">
       <DependentUpon>Delete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\RegLecturePages\Delete.aspx.designer.cs">
+    <Compile Include="Pages\RegLecturePages\OldPages\Delete.aspx.designer.cs">
       <DependentUpon>Delete.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RegLecturePages\AddComment.aspx.cs">
+    <Compile Include="Pages\RegLecturePages\OldPages\AddComment.aspx.cs">
       <DependentUpon>AddComment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\RegLecturePages\AddComment.aspx.designer.cs">
+    <Compile Include="Pages\RegLecturePages\OldPages\AddComment.aspx.designer.cs">
       <DependentUpon>AddComment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\RegLecturePages\Delete2.aspx.cs">
@@ -156,11 +156,11 @@
     <Compile Include="Pages\RegLecturePages\Delete2.aspx.designer.cs">
       <DependentUpon>Delete2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RegLecturePages\DeleteComment.aspx.cs">
+    <Compile Include="Pages\RegLecturePages\OldPages\DeleteComment.aspx.cs">
       <DependentUpon>DeleteComment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\RegLecturePages\DeleteComment.aspx.designer.cs">
+    <Compile Include="Pages\RegLecturePages\OldPages\DeleteComment.aspx.designer.cs">
       <DependentUpon>DeleteComment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\RegLecturePages\DeleteComment2.aspx.cs">
@@ -170,11 +170,11 @@
     <Compile Include="Pages\RegLecturePages\DeleteComment2.aspx.designer.cs">
       <DependentUpon>DeleteComment2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RegLecturePages\EditComment.aspx.cs">
+    <Compile Include="Pages\RegLecturePages\OldPages\EditComment.aspx.cs">
       <DependentUpon>EditComment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\RegLecturePages\EditComment.aspx.designer.cs">
+    <Compile Include="Pages\RegLecturePages\OldPages\EditComment.aspx.designer.cs">
       <DependentUpon>EditComment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\RegLecturePages\EditComment2.aspx.cs">
@@ -184,11 +184,11 @@
     <Compile Include="Pages\RegLecturePages\EditComment2.aspx.designer.cs">
       <DependentUpon>EditComment2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RegLecturePages\EditLecture.aspx.cs">
+    <Compile Include="Pages\RegLecturePages\OldPages\EditLecture.aspx.cs">
       <DependentUpon>EditLecture.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\RegLecturePages\EditLecture.aspx.designer.cs">
+    <Compile Include="Pages\RegLecturePages\OldPages\EditLecture.aspx.designer.cs">
       <DependentUpon>EditLecture.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\RegLecturePages\EditLecture2.aspx.cs">
@@ -198,11 +198,11 @@
     <Compile Include="Pages\RegLecturePages\EditLecture2.aspx.designer.cs">
       <DependentUpon>EditLecture2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RegLecturePages\LectureDetails.aspx.cs">
+    <Compile Include="Pages\RegLecturePages\OldPages\LectureDetails.aspx.cs">
       <DependentUpon>LectureDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\RegLecturePages\LectureDetails.aspx.designer.cs">
+    <Compile Include="Pages\RegLecturePages\OldPages\LectureDetails.aspx.designer.cs">
       <DependentUpon>LectureDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\RegLecturePages\LectureDetails2.aspx.cs">
@@ -212,11 +212,11 @@
     <Compile Include="Pages\RegLecturePages\LectureDetails2.aspx.designer.cs">
       <DependentUpon>LectureDetails2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RegLecturePages\Listing.aspx.cs">
+    <Compile Include="Pages\RegLecturePages\OldPages\Listing.aspx.cs">
       <DependentUpon>Listing.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\RegLecturePages\Listing.aspx.designer.cs">
+    <Compile Include="Pages\RegLecturePages\OldPages\Listing.aspx.designer.cs">
       <DependentUpon>Listing.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\RegLecturePages\Listing2.aspx.cs">
@@ -226,11 +226,11 @@
     <Compile Include="Pages\RegLecturePages\Listing2.aspx.designer.cs">
       <DependentUpon>Listing2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RegLecturePages\StartThread.aspx.cs">
+    <Compile Include="Pages\RegLecturePages\OldPages\StartThread.aspx.cs">
       <DependentUpon>StartThread.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\RegLecturePages\StartThread.aspx.designer.cs">
+    <Compile Include="Pages\RegLecturePages\OldPages\StartThread.aspx.designer.cs">
       <DependentUpon>StartThread.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\RegLecturePages\StartThread2.aspx.cs">
@@ -240,18 +240,18 @@
     <Compile Include="Pages\RegLecturePages\StartThread2.aspx.designer.cs">
       <DependentUpon>StartThread2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RegLecturePages\ViewQuestions.aspx.cs">
+    <Compile Include="Pages\RegLecturePages\OldPages\ViewQuestions.aspx.cs">
       <DependentUpon>ViewQuestions.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\RegLecturePages\ViewQuestions.aspx.designer.cs">
+    <Compile Include="Pages\RegLecturePages\OldPages\ViewQuestions.aspx.designer.cs">
       <DependentUpon>ViewQuestions.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Shared\error.aspx.cs">
+    <Compile Include="Pages\RegLecturePages\OldPages\error.aspx.cs">
       <DependentUpon>error.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Shared\error.aspx.designer.cs">
+    <Compile Include="Pages\RegLecturePages\OldPages\error.aspx.designer.cs">
       <DependentUpon>error.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Shared\error2.aspx.cs">

@@ -7,6 +7,9 @@
         <asp:Panel ID="SucceedPanel" runat="server" Visible="false" CssClass="AssignmentSuccess">
             <asp:Label ID="SucceedLabel" runat="server" Text="" />
         </asp:Panel>
+
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
+        
         <asp:FormView ID="UpdateLectureForm" runat="server"
                 ItemType="LectureComments.Model.Comment"
                 DataKeyNames="DiscRowID"
@@ -19,7 +22,11 @@
                     <label>Uppdatera kommentar</label>
                 </div>
                 <div>
-                    <asp:TextBox ID="DiscTextTB" runat="server" Text='<%# BindItem.DiscText %>' />
+                    <asp:TextBox ID="DiscTextTB" runat="server" Text='<%# BindItem.DiscText %>' MaxLength="300" TextMode="MultiLine" />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" 
+                                                runat="server" 
+                                                ErrorMessage="Du måste skriva en kommentar." 
+                                                ControlToValidate="DiscTextTB" Display="None"/>
                 </div>
                 <div>
                     <asp:Button ID="SaveButton" runat="server" Text="Uppdatera" CommandName="Update" />
@@ -33,7 +40,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ScriptContentPlaceHolder" runat="server">
     <script type="text/javascript">
         setTimeout(function () {
-            var statusMessageDiv = document.getElementById("SucceedPanel");
+            var statusMessageDiv = document.getElementById("MainContentPlaceHolder_SucceedPanel");
             var cancelQuestion = document.getElementById("CloseLink2");
 
             cancelQuestion.onclick = function () {

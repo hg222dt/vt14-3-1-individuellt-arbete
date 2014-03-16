@@ -38,7 +38,7 @@
                         <td>
                             <asp:HyperLink ID="LectureNameLink" runat="server" NavigateUrl='<%# GetRouteUrl("DetailsLecture", new{ id = Item.LectureId})  %>' Text='<%# Item.LectureName %>' />
                         </td>
-                        <td>
+                        <td>    
                             <asp:Label ID="LectureDateLabel" runat="server" Text='<%#: Item.LectureDate %>' />
                         </td>
                     </tr>
@@ -63,10 +63,10 @@
     <script type="text/javascript">
         setTimeout(function () {
             var closeMessageLink = document.getElementById("CloseLink");
-            var statusMessageDiv = document.getElementById("SucceedPanel");
+            var statusMessageDiv = document.getElementById("MainContentPlaceHolder_SucceedPanel");
             closeMessageLink.onclick = function () {
                 statusMessageDiv.parentElement.removeChild(statusMessageDiv);
             }
-        }, 1000);
+        }, 2000);
     </script>
 </asp:Content>
