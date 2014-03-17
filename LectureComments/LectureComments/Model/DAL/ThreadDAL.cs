@@ -120,6 +120,49 @@ namespace LectureComments.Model.DAL
             }
         }
 
+        public IEnumerable<ThreadOnly> getThreadByID2(int LectureID)
+        {
+            using (var conn = CreateConnection())
+            {
+                try
+                {
+                    var thread = new List<ThreadOnly>(100);
+
+                    var cmd = new SqlCommand("appSchema.usp_GetThreadsInLecture2", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@LectureID", SqlDbType.Int, 4).Value = LectureID;
+
+                    conn.Open();
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        var threadIdIndex = reader.GetOrdinal("ThreadID");
+                        var lectureIdIndex = reader.GetOrdinal("LectureID");             
+                        var timecodeIndex = reader.GetOrdinal("Timecode");
+   
+                        while (reader.Read())
+                        {
+                            thread.Add(new ThreadOnly
+                            {
+                                ThreadID = reader.GetInt32(threadIdIndex),
+                                LectureID = reader.GetInt32(lectureIdIndex),
+                                Timecode = reader.GetString(timecodeIndex)
+                            });
+                        }
+                    }
+
+                    thread.TrimExcess();
+
+                    return thread;
+                }
+                catch
+                {
+                    throw new ApplicationException("An error occured while retrieving thread from database.");
+                }
+            }
+        }
+
         public Question GetQuestionById(int QuestionID)
         {
             using (var conn = CreateConnection())

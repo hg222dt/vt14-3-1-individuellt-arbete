@@ -21,7 +21,7 @@
                     <label>Fråga</label>
                 </div>
                 <div>
-                    <asp:TextBox ID="QuestionTextTB" runat="server" Text='<%# BindItem.QuestionText %>' MaxLength="300"/>
+                    <asp:TextBox ID="QuestionTextTB" TextMode="MultiLine" runat="server" Text='<%# BindItem.QuestionText %>' MaxLength="300"/>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" 
                                                 runat="server" 
                                                 ErrorMessage="Du måste skriva en fråga." 

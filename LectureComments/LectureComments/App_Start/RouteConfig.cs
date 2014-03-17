@@ -20,6 +20,8 @@ namespace LectureComments.App_Start
             routes.MapPageRoute("EditComment",      "forelasning/kommentera/uppdatera/{id}","~/Pages/RegLecturePages/EditComment2.aspx");
             routes.MapPageRoute("DeleteComment",    "forelasning/kommentera/radera/{id}",   "~/Pages/RegLecturePages/DeleteComment2.aspx");
 
+            routes.MapPageRoute("ListTest",         "forelasningar/test/{id}",              "~/Pages/RegLecturePages/WebForm2.aspx");
+
             routes.MapPageRoute("Error",            "serverfel",                            "~/Pages/Shared/Error2.aspx");
             
             routes.MapPageRoute("Default",          "",                                     "~/Pages/RegLecturePages/Listing2.aspx");

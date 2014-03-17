@@ -9,6 +9,7 @@
             Föreläsningsfrågor
     </asp:ContentPlaceHolder>
     </title>
+    <link rel="stylesheet" href="~/styles1.css" />
 </head>
 <body>
         <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" />

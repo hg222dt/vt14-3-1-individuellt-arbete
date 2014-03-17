@@ -9,45 +9,19 @@ using System.Web.ModelBinding;
 
 namespace LectureComments.Pages.RegLecturePages
 {
-    public partial class LectureDetails2 : System.Web.UI.Page
+    public partial class WebForm2 : System.Web.UI.Page
     {
-        private int RouteID;
-
         private Service _service;
 
         private Service Service
         {
             get { return _service ?? (_service = new Service()); }
         }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Page.PeekTempData("SuccessMessage") as string == "Föreläsningen uppdaterades.")
-            {
-                UpdateSucceedLabel.Text = Page.GetTempData("SuccessMessage") as string;
-                UpdateSucceedPanel.Visible = true;
-            }
+
         }
-
-        public Lecture LectureFormView_GetItem([RouteData] int id)
-        {
-            RouteID = id;
-
-            try
-            {
-                return Service.GetLecture(id);
-            }
-            catch (Exception)
-            {
-                ModelState.AddModelError(String.Empty, "Fel inträffade då föreläsningen hämtades.");
-                return null;
-            }
-        }
-
-        public IEnumerable<Thread> ThreadListView_GetData()
-        {
-            return Service.getThreadByID(RouteID);
-        }
-
 
         private int innerListViewRow = 0;
 

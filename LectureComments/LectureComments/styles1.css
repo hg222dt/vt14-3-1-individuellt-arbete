@@ -1,0 +1,13 @@
+﻿body {
+
+}
+
+.threadDiv {
+    border: 3px solid black;
+    width: 210px;
+}
+
+.commentDiv {
+    border: 3px solid black;
+    width: 200px;
+}

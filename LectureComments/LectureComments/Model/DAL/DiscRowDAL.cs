@@ -165,6 +165,52 @@ namespace LectureComments.Model.DAL
 
         }
 
+        public IEnumerable<Comment> getCommentsInThread(int ThreadID)
+        {
+            using (var conn = CreateConnection())
+            {
+                try
+                {
+                    var comments = new List<Comment>(100);
 
+                    var cmd = new SqlCommand("appSchema.usp_GetCommentsInThread", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@ThreadID", SqlDbType.Int, 4).Value = ThreadID;
+
+                    conn.Open();
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        var discRowIdIndex = reader.GetOrdinal("DiscRowID");
+                        var discTextIndex = reader.GetOrdinal("DiscText");
+                        var dateIndex = reader.GetOrdinal("Date");
+                        var lectureIdIndex = reader.GetOrdinal("LectureID");
+                        var authorIndex = reader.GetOrdinal("Author");
+                        var threadIdIndex = reader.GetOrdinal("ThreadID");
+
+                        while (reader.Read())
+                        {
+                            comments.Add(new Comment
+                            {
+                                LectureID = reader.GetInt32(lectureIdIndex),
+                                ThreadID = reader.GetInt32(threadIdIndex),
+                                DiscRowID = reader.GetInt32(discRowIdIndex),
+                                DiscText = reader.GetString(discTextIndex),
+                                Author = reader.GetString(authorIndex),
+                                Date = reader.GetString(dateIndex),
+                            });
+                        }
+                    }
+
+                    comments.TrimExcess();
+                    return comments;
+                }
+                catch
+                {
+                    throw new ApplicationException("An error occured while getting lectures from database.");
+                }
+            }
+        }
     }
 }

@@ -56,9 +56,6 @@ namespace LectureComments.Model
             return DiscRowDAL.GetCommentById(DiscRowID);
         }
 
-
-
-
         public void SaveLecture(Lecture lecture)
         {
             ICollection<ValidationResult> validationResults;
@@ -99,6 +96,11 @@ namespace LectureComments.Model
             return ThreadDAL.getThreadByID(LectureID);
         }
 
+        public IEnumerable<ThreadOnly> getThreadByID2(int LectureID)
+        {
+            return ThreadDAL.getThreadByID2(LectureID);
+        }
+
         public void SaveComment (Comment Comment)
         {
             ICollection<ValidationResult> validationResults;
@@ -122,6 +124,11 @@ namespace LectureComments.Model
         public void DeleteComment(int id)
         {
             DiscRowDAL.DeleteDiscRow(id);
+        }
+
+        public IEnumerable<Comment> getCommentsInThread(int LectureID)
+        {
+            return DiscRowDAL.getCommentsInThread(LectureID);
         }
     }
 }

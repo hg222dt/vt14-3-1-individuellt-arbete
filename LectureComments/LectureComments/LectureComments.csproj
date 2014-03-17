@@ -80,7 +80,10 @@
     <Content Include="Pages\RegLecturePages\StartThread2.aspx" />
     <Content Include="Pages\RegLecturePages\OldPages\ViewQuestions.aspx" />
     <Content Include="Pages\RegLecturePages\OldPages\error.aspx" />
+    <Content Include="Pages\RegLecturePages\WebForm1.aspx" />
+    <Content Include="Pages\RegLecturePages\WebForm2.aspx" />
     <Content Include="Pages\Shared\error2.aspx" />
+    <Content Include="styles1.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -114,6 +117,7 @@
     <Compile Include="Model\Question.cs" />
     <Compile Include="Model\Service.cs" />
     <Compile Include="Model\Thread.cs" />
+    <Compile Include="Model\ThreadOnly.cs" />
     <Compile Include="Pages\RegLecturePages\AddComment2.aspx.cs">
       <DependentUpon>AddComment2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -253,6 +257,20 @@
     </Compile>
     <Compile Include="Pages\RegLecturePages\OldPages\error.aspx.designer.cs">
       <DependentUpon>error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegLecturePages\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RegLecturePages\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegLecturePages\WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RegLecturePages\WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Shared\error2.aspx.cs">
       <DependentUpon>error2.aspx</DependentUpon>
