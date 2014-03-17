@@ -5,6 +5,11 @@
     <form id="form1" runat="server">
     <div class="title">
         <h3 class="titleText">Uppdatera kommentar</h3>
+        <div class="subText">
+            <p>
+                Uppdatera din fråga här. OBSERVEREA att när du skickat din fråga och kommit tillbaka till föreläsningen, måste du uppdatera sidan för att frågan ska dyka upp.
+            </p>
+        </div>
     </div>
     <div class="centerDiv">
         <asp:Panel ID="SucceedPanel" runat="server" Visible="false" CssClass="AssignmentSuccess">

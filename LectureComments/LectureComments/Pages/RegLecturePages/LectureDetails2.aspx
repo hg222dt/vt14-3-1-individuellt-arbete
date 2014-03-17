@@ -143,9 +143,9 @@
                 </div>
             </ItemTemplate>
             <EmptyDataTemplate>
+                <p>Ingen har frågat något än.</p>
             </EmptyDataTemplate>
         </asp:ListView>
-
     </div>
     </div>
     </form>

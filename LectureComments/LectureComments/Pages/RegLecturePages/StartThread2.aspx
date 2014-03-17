@@ -8,7 +8,7 @@
         <div class="subText">
             <p>
                 Skriv din fråga här, samt specificera i fältet Tidkod vid vilken tidpunkt i videoklippet du syftar på. 
-                Då blir det lättare för läraren att svara på din fråga!
+                Då blir det lättare för läraren att svara på din fråga! OBSERVEREA att när du skickat din fråga och kommit tillbaka till föreläsningen, måste du uppdatera sidan för att frågan ska dyka upp.
             </p>
         </div>
     </div>
@@ -16,8 +16,8 @@
         <asp:Panel ID="SucceedPanel" runat="server" Visible="false" CssClass="AssignmentSuccess">
             <asp:Label ID="SucceedLabel" runat="server" Text="" />
         </asp:Panel>
-
-        <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
+        
+            <asp:ValidationSummary ID="ValidationSummary1" runat="server" Display="dynamic" />
         
         <asp:FormView ID="CreateLectureForm" runat="server"
             ItemType="LectureComments.Model.Thread"
