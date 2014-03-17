@@ -3,11 +3,11 @@
 }
 
 .threadDiv {
-    border: 3px solid black;
+    border: 3px solid red;
     width: 210px;
 }
 
 .commentDiv {
-    border: 3px solid black;
+    border: 3px solid red;
     width: 200px;
 }
