@@ -3,7 +3,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <form id="form1" runat="server">
-    <div>
+    <div class="title">
+        <h3 class="titleText">Radera kommentar</h3>
+    </div>
+    <div class="centerDiv">
         <asp:Panel ID="SucceedPanel" runat="server" Visible="false" CssClass="AssignmentSuccess">
             <asp:Label ID="SucceedLabel" runat="server" Text="" />
         </asp:Panel>
@@ -11,9 +14,8 @@
             <h3>Vill du verkligen ta bort komentaren?</h3>
             <asp:LinkButton runat="server" ID="DeleteLink" Text="Radera kommentaren" OnCommand="DeleteLink_Command" CommandArgument='<%$ RouteValue:id %>' />
         </asp:Panel>
-        
-    </div>
         <a href="#" id="CloseLink2">Tillbaka till föreläsning</a>
+    </div>
     </form>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ScriptContentPlaceHolder" runat="server">

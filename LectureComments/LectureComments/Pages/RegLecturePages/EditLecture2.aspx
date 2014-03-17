@@ -3,7 +3,15 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <form id="form1" runat="server">
-    <div>
+        <div class="title">
+            <h3 class="titleText">Uppdatera föreläsning</h3>
+            <div class="subText">
+                <p>
+                   Uppdatera föreläsningens information i fälten nedan.
+                </p>
+            </div>
+        </div>
+    <div class="centerDiv">
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
         <asp:FormView ID="UpdateLectureForm" runat="server"
                 ItemType="LectureComments.Model.Lecture"

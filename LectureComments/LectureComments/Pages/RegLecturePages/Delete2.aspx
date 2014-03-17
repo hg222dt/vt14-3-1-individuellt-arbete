@@ -3,7 +3,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <form id="form1" runat="server">
-    <div>
+        <div class="title">
+            <h3 class="titleText">Radera föreläsning</h3>
+        </div>
+    <div class="centerDiv">
         <h3>Vill du verkligen ta bort föreläsningen?</h3>
     
         <asp:LinkButton runat="server" ID="DeleteLink" Text="Radera föreläsningen" OnCommand="DeleteLink_Command" CommandArgument='<%$ RouteValue:id %>' />

@@ -3,7 +3,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <form id="form1" runat="server">
-    <div>
+    <div class="title">
+        <h3 class="titleText">Uppdatera kommentar</h3>
+    </div>
+    <div class="centerDiv">
         <asp:Panel ID="SucceedPanel" runat="server" Visible="false" CssClass="AssignmentSuccess">
             <asp:Label ID="SucceedLabel" runat="server" Text="" />
         </asp:Panel>
@@ -19,7 +22,7 @@
                 RenderOuterTable="false">
             <EditItemTemplate>
                 <div>
-                    <label>Uppdatera kommentar</label>
+                    <label>Kommentarstext</label>
                 </div>
                 <div>
                     <asp:TextBox ID="DiscTextTB" runat="server" Text='<%# BindItem.DiscText %>' MaxLength="300" TextMode="MultiLine" />

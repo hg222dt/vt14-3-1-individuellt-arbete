@@ -3,7 +3,15 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <form id="form1" runat="server">
-    <div>
+        <div class="title">
+            <h3 class="titleText">Svara på fråga</h3>
+            <div class="subText">
+                <p>
+                    Här kan du svara på en tråd. Du kommer behöva uppdatera sidan med kommentarer för att din fråga ska dyka upp.
+                </p>
+            </div>
+        </div>
+        <div class="centerDiv">
         <asp:Panel ID="SucceedPanel" runat="server" Visible="false" CssClass="AssignmentSuccess">
             <asp:Label ID="SucceedLabel" runat="server" Text="" />
         </asp:Panel>

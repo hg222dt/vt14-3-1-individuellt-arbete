@@ -4,59 +4,70 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+    
     <form id="form1" runat="server">
-        <asp:Panel ID="SucceedPanel" runat="server" Visible="false" CssClass="AssignmentSuccess">
-            <asp:Label ID="SucceedLabel" runat="server" Text="" />
-            <a href="#" id="CloseLink">Stäng meddelande</a>
-        </asp:Panel>
+        <div class="title">
+            <h3 class="titleText">Föreläsningsrespons.se</h3>
+            <div class="subText">
+                Välkommen till föreläsningsrespons. Här kan du i föreläsningsvideor ställa frågor 
+                till läraren på videoklippens tidslinje och få svar.
+            </div>
+        </div>
+        <div class="centerDiv" id="lectureList">
+            <asp:Panel ID="SucceedPanel" runat="server" Visible="false" CssClass="AssignmentSuccess">
+                <asp:Label ID="SucceedLabel" runat="server" Text="" />
+                <a href="#" id="CloseLink">Stäng meddelande</a>
+            </asp:Panel>
 
-        <div id="showLecturesDiv">
-            <h3>Föreläsningar</h3>
-            <asp:HyperLink ID="CreateLectureLink" runat="server"  Text="Lägg till föreläsning" NavigateUrl="<%$ RouteUrl:routename=CreateLecture %>"/>
-            <asp:ListView ID="LectureListView" runat="server"
-                ItemType="LectureComments.Model.Lecture"
-                SelectMethod="LectureListView_GetData"
-                DataKeyNames="LectureID">
-                <LayoutTemplate>
-                    <table>
-                        <tr>
-                            <th>
-                                Föreläsningsnamn
-                            </th>
-                            <th>
-                                Datum
-                            </th>
-                        </tr>
+            <div id="showLecturesDiv">
+                <h3><strong>Föreläsningar</strong></h3>
+                <br />
+                <asp:HyperLink ID="CreateLectureLink" runat="server"  Text="Lägg till föreläsning" NavigateUrl="<%$ RouteUrl:routename=CreateLecture %>"/>
+                <asp:ListView ID="LectureListView" runat="server"
+                    ItemType="LectureComments.Model.Lecture"
+                    SelectMethod="LectureListView_GetData"
+                    DataKeyNames="LectureID">
+                    <LayoutTemplate>
+                        <table>
+                            <tr>
+                                <th>
+                                    Föreläsningsnamn
+                                </th>
+                                <th>
+                                    Datum
+                                </th>
+                            </tr>
 
-                        <%-- Platshållare för nya rader --%>
-                        <asp:PlaceHolder ID="itemPlaceHolder" runat="server"></asp:PlaceHolder>
+                            <%-- Platshållare för nya rader --%>
+                            <asp:PlaceHolder ID="itemPlaceHolder" runat="server"></asp:PlaceHolder>
 
-                    </table>
-                </LayoutTemplate>
-                <ItemTemplate>
-                    <tr>
-                        <td>
-                            <asp:HyperLink ID="LectureNameLink" runat="server" NavigateUrl='<%# GetRouteUrl("DetailsLecture", new{ id = Item.LectureId})  %>' Text='<%# Item.LectureName %>' />
-                        </td>
-                        <td>    
-                            <asp:Label ID="LectureDateLabel" runat="server" Text='<%#: Item.LectureDate %>' />
-                        </td>
-                    </tr>
-                </ItemTemplate>
-                <EmptyDataTemplate>
-                    <table>
+                        </table>
+                    </LayoutTemplate>
+                    <ItemTemplate>
                         <tr>
                             <td>
-                                <%-- Visas om kontaktuppgifter inte existerar i databasen --%>
-                                Inga föreläsningar hittades i databasen.
+                                <asp:HyperLink ID="LectureNameLink" runat="server" NavigateUrl='<%# GetRouteUrl("DetailsLecture", new{ id = Item.LectureId})  %>' Text='<%# Item.LectureName %>' />
+                            </td>
+                            <td>    
+                                <asp:Label ID="LectureDateLabel" runat="server" Text='<%#: Item.LectureDate %>' />
                             </td>
                         </tr>
-                    </table>
-                </EmptyDataTemplate>
-            </asp:ListView>
+                    </ItemTemplate>
+                    <EmptyDataTemplate>
+                        <table>
+                            <tr>
+                                <td>
+                                    <%-- Visas om kontaktuppgifter inte existerar i databasen --%>
+                                    Inga föreläsningar hittades i databasen.
+                                </td>
+                            </tr>
+                        </table>
+                    </EmptyDataTemplate>
+                </asp:ListView>
+            </div>
         </div>
     </form>
-   
+
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="ScriptContentPlaceHolder" runat="server">

@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\styles1.css" />
     <Content Include="Global.asax" />
     <Content Include="LectureRegPage.aspx" />
     <Content Include="LecturePage.aspx" />
@@ -83,7 +84,7 @@
     <Content Include="Pages\RegLecturePages\WebForm1.aspx" />
     <Content Include="Pages\RegLecturePages\WebForm2.aspx" />
     <Content Include="Pages\Shared\error2.aspx" />
-    <Content Include="styles1.css" />
+    <Content Include="Pages\RegLecturePages\OldPages\styles1.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

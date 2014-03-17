@@ -2,8 +2,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContentPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+    
     <form id="form1" runat="server">
-        <div>
+        <div class="title">
+            <h3 class="titleText">Lägg till föreläsning</h3>
+            <div class="subText">
+                Skriv in uppgifter till den föreläsninge du vill lägga till i registret.
+            </div>
+        </div>
+
+        <div class="centerDiv">
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
             <h3>Ny föreläsning!</h3>
             <asp:FormView ID="CreateLectureForm" runat="server"
