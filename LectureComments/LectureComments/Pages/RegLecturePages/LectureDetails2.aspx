@@ -6,10 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     
     <form id="form1" runat="server">
-    <asp:Panel ID="UpdateSucceedPanel" runat="server" Visible="false" CssClass="AssignmentSuccess">
-        <asp:Label ID="UpdateSucceedLabel" runat="server" Text="" />
-        <a href="#" id="CloseLink">Stäng meddelande</a>
-    </asp:Panel>
+
     <div>
         <div class="title">
             <h3 class="titleText">Föreläsningsrum</h3>
@@ -20,6 +17,11 @@
                 </p>
             </div>
         </div>
+
+        <asp:Panel ID="UpdateSucceedPanel" runat="server" Visible="false" CssClass="AssignmentSuccess">
+            <asp:Label ID="UpdateSucceedLabel" runat="server" Text="" />
+            <a href="#" id="CloseLink">Stäng meddelande</a>
+        </asp:Panel>
 
         <asp:FormView ID="LectureFormView" runat="server"
             ItemType="LectureComments.Model.Lecture"
@@ -149,4 +151,14 @@
     </form>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ScriptContentPlaceHolder" runat="server">
+    <script type="text/javascript">
+        setTimeout(function () {
+            var closeMessageLink = document.getElementById("CloseLink");
+            var statusMessageDiv = document.getElementById("MainContentPlaceHolder_UpdateSucceedPanel");
+
+            closeMessageLink.onclick = function () {
+                statusMessageDiv.parentElement.removeChild(statusMessageDiv);
+            }
+        }, 1000);
+    </script>
 </asp:Content>

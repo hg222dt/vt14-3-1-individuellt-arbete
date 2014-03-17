@@ -13,12 +13,11 @@
                 till läraren på videoklippens tidslinje och få svar.
             </div>
         </div>
+        <asp:Panel ID="SucceedPanel" runat="server" Visible="false" Class="AssignmentSuccess">
+            <asp:Label ID="SucceedLabel" runat="server" Text="" />
+            <a href="#" id="CloseLink">Stäng meddelande</a>
+        </asp:Panel>
         <div class="centerDiv" id="lectureList">
-            <asp:Panel ID="SucceedPanel" runat="server" Visible="false" CssClass="AssignmentSuccess">
-                <asp:Label ID="SucceedLabel" runat="server" Text="" />
-                <a href="#" id="CloseLink">Stäng meddelande</a>
-            </asp:Panel>
-
             <div id="showLecturesDiv">
                 <h3><strong>Föreläsningar</strong></h3>
                 <br />
