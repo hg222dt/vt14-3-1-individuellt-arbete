@@ -19,12 +19,6 @@ namespace LectureComments.Pages.RegLecturePages
             get { return _service ?? (_service = new Service()); }
         }
 
-        //Tillhandahåller sidans och kommentarens id.
-        //protected int Id
-        //{
-        //    get { return int.Parse(RouteData.Values["id"].ToString()); }
-        //}
-
         protected void Page_Load(object sender, EventArgs e)
         {
 

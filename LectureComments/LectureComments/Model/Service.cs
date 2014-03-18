@@ -47,12 +47,6 @@ namespace LectureComments.Model
             return LectureDAL.GetLectureById(LectureID);
         }
 
-        
-        //public Question GetQuestion(int QuestionID)
-        //{
-        //    return ThreadDAL.GetQuestionById(QuestionID);
-        //}
-
         //Hämtar kommentarsobjekt beroende på id av kommentar som skickas som argument.
         public Comment GetCommentById(int DiscRowID)
         {
@@ -93,11 +87,6 @@ namespace LectureComments.Model
         {
             ThreadDAL.StartThread(Thread);
         }
-
-        //public void UpdateComment(Question Question)
-        //{
-        //    ThreadDAL.UpdateComment(Question);
-        //}
 
         //Returnerar alla trådobjekt (Thread) till specifik föreläsning.
         public IEnumerable<Thread> getThreadByID(int LectureID)

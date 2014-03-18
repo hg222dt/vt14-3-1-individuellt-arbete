@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <form id="form1" runat="server">
         <div class="title">
-            <h3 class="titleText">Oj, ett fel uppstid :)</h3>
+            <h3 class="titleText">Oj, ett fel uppstod :)</h3>
         </div>
         <div class="centerDiv">
             <p>Ett oväntat fel uppstod.</p>
