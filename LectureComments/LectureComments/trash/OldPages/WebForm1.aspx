@@ -9,7 +9,6 @@
 <body>
     <form id="form1" runat="server">
     <div>
-
         <%-- Ska hämta tråd. ThreadID. Timecode. LectureID. --%>
         <asp:ListView ID="ThreadsInLectureLV" runat="server"
             ItemType="LectureComments.Model.Thread"

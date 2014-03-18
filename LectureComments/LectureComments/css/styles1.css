@@ -2,12 +2,14 @@
 
 }
 
+/*Sektion för trådar*/
 .threadDiv {
     background-color: lightgray;
     width: 290px;
     margin-bottom:20px;
 }
 
+/*Sektion för kommentarer*/
 .commentDiv {
     background-color: white;
     width: 260px;
@@ -18,6 +20,7 @@
     padding:10px;
 }
 
+/*Starta-en-tråd-knapp*/
 .commentButtons {
     position: relative;
     margin-bottom: -10px;
@@ -26,18 +29,21 @@
     font-size:0.8em;
 }
 
+/*Svars-knapp i respektive tråd*/
 .answerThreadLink {
     position: relative;
     margin-left: 250px;
     font-size:0.8em;
 }
 
+/*Tidskod-utskrift i kommentarsfält*/
 .timecodeSpan {
     margin-top: 5px;
     margin-left: 5px;
     font-size:0.8em;
 }
 
+/*Alla divisioner som ska är centrerade */
 .centerDiv, .AssignmentSuccess {
     width:27%;
     position:relative;
@@ -50,15 +56,18 @@
     background-color: lightgray;
 }
 
+/*Föreläsningsdetaljer*/
 #detailsSection {
     width: 300px;
     background-color: lightgray;
 }
 
+/*Sektion för videoklipp*/
 #videoSection {
     width: 460px;
 }
 
+/*Sektion där kommentarstrådars sektioner ligger i*/
 #commentsSection {
     width: 290px;
     margin-top: -30px;
@@ -67,36 +76,43 @@
     margin-top: 30px;
 }
 
+/*label med kommentarstext*/
 #questionLabel {
     font-size: 1.2em;
     margin-top: -2px;
 }
 
+/*omslutande container på alla sidor*/
 .mainContainer {
     margin-left: auto;
     margin-right: auto;
     border: 1px solid black;
 }
 
+/*alla divisioner*/
 div {
     clear: both;
 }
 
+/*Länk för att skicka kommentar*/
 .sendQuestLink {
     margin-top: 20px;
     font-size: 1.5em;
 }
 
+/*rubrik och ingress*/
 .title {
     position: relative;
     margin-left: 40px;
     margin-top: 40px;
 }
 
+/*Tiel-text*/
 .titleText {
     font-size: 2em;
 }
 
+/*Ingress-text*/
 .subText {
     width: 300px;
 }

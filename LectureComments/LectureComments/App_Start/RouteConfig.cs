@@ -6,6 +6,9 @@ using System.Web.Routing;
 
 namespace LectureComments.App_Start
 {
+
+    //Route-konfigurering definierar de olika sidorna och dess url.
+
     public static class RouteConfig
     {
         public static void RegisterRoutes(RouteCollection routes)

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
+//Extention som validerar vår data på servern
 
 public static class MyValidationExtension
 {

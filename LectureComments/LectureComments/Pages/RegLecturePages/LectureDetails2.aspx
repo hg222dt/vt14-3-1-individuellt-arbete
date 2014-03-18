@@ -1,13 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Shared/Site1.Master" AutoEventWireup="true" CodeBehind="LectureDetails2.aspx.cs" Inherits="LectureComments.Pages.RegLecturePages.LectureDetails2" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="TitleContentPlaceHolder" runat="server">
-</asp:Content>
 
+<%-- PlaceHolder till masterpage--%>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     
     <form id="form1" runat="server">
 
     <div>
+        <%-- Kapslar in titel och beskrivning av sidan --%>
         <div class="title">
             <h3 class="titleText">Föreläsningsrum</h3>
             <div class="subText">
@@ -18,11 +18,13 @@
             </div>
         </div>
 
+        <%-- Meddelanden skrivs ut efter uppgifter som användaren gör --%>
         <asp:Panel ID="UpdateSucceedPanel" runat="server" Visible="false" CssClass="AssignmentSuccess">
             <asp:Label ID="UpdateSucceedLabel" runat="server" Text="" />
             <a href="#" id="CloseLink">Stäng meddelande</a>
         </asp:Panel>
 
+        <%-- Skriver ut data till angiven föreläsning --%>
         <asp:FormView ID="LectureFormView" runat="server"
             ItemType="LectureComments.Model.Lecture"
             SelectMethod="LectureFormView_GetItem"
@@ -34,6 +36,7 @@
                         <label for="Name">Namn på föreläsning</label>
                     </div>
                     <div>
+                        <%-- Namn på föreläsning--%>
                         <strong>
                             <%#: Item.LectureName %>
                         </strong>
@@ -42,6 +45,7 @@
                         <label for="Name">Namn på kurs</label>
                     </div>
                     <div>
+                        <%-- Kursnamn --%>
                         <strong>
                             <%#: Item.CourseName %>
                         </strong>
@@ -50,6 +54,7 @@
                         <label for="Date">Datum</label>
                     </div>
                     <div>
+                        <%-- Datum --%>
                         <strong>
                             <%#: Item.LectureDate %>
                         </strong>
@@ -58,6 +63,7 @@
                         <label for="Name">Lärare</label>
                     </div>
                     <div>
+                        <%-- Lärare --%>
                         <strong>
                             <%#: Item.TeacherName %>
                         </strong>
@@ -66,10 +72,13 @@
                         <label for="Name">Video-Url</label>
                     </div>
                     <div>
+                        <%-- Video-Url--%>
                         <strong>
                             <%#: Item.VideoUrl %>
                         </strong>
                     </div>
+
+                    <%-- länkar för att uppdater eller radera föreläsningar, samt för att återgå till tildigiare sida --%>
                     <div>
                         <div>
                             <asp:HyperLink runat="server" Text="Uppdatera info" NavigateUrl='<%# GetRouteUrl("EditLecture", new { id = Item.LectureId }) %>' />
@@ -83,11 +92,13 @@
                     </div>
                 </div>
 
+                <%-- Här visas inbäddad video av föreläsningen --%>
                 <div class="centerDiv" id="videoSection">
                     <div class="video-field">
                         <iframe width="460" height="330" src='<%#: Item.VideoUrl %>' frameborder="0" allowfullscreen></iframe>
                     </div>
                     
+                    <%-- Länk för att ställa en fråga till videon --%>
                     <strong>
                         <asp:HyperLink ID="CommentLink" runat="server" class="sendQuestLink" NavigateUrl='<%# GetRouteUrl("AddToThread", new{ id = Item.LectureId})  %>' Text="Ställ en fråga" Target="_blank"/>
                     </strong>
@@ -95,12 +106,13 @@
             </ItemTemplate>
         </asp:FormView>
         
+        <%-- kommentars-sektion --%>
         <div class="centerDiv" id="commentsSection">
 
             <p id="questionLabel"><strong>Frågor på föreläsningens tidslinje</strong></p>
 
 
-        <%-- Ska hämta tråd. ThreadID. Timecode. LectureID. --%>
+        <%-- Hämtar och listar alla trådar i angiven lektion--%>
         <asp:ListView ID="ThreadsInLectureLV" runat="server"
             ItemType="LectureComments.Model.ThreadOnly"
             SelectMethod="ThreadsInLectureListView_GetData"
@@ -116,7 +128,7 @@
                 <div class="threadDiv">
                     <span class="timecodeSpan">Tid i video: <strong><%#: Item.Timecode %></strong></span>
 
-                <%-- Ska hämta alla DicsRow-rader i specifik ThreadID. DiscRowID, ThreadID. Date. DiscText. Author. --%>
+                <%-- Hämtar och visar alla kommentarer i en angiven tråd --%>
                 <asp:ListView   ID="CommentsInThreadLV" runat="server" 
                                 ItemType="LectureComments.Model.Comment"
                                 SelectMethod="CommentsInThreadListView_GetData"
@@ -128,7 +140,11 @@
                     </LayoutTemplate>
                     <ItemTemplate>
                         <div class="commentDiv">
+                            
+                            <%-- Utskrift av avsändare av kommentar. --%>
                             <span><%#: Item.Author %>: </span>
+
+                            <%-- Utskrift av kommentarens text--%>
                             <span><%#: Item.DiscText %> </span>
                             <div class="commentButtons">
                                 <asp:HyperLink runat="server" class="commentLinks" Text="Uppdatera" NavigateUrl='<%# GetRouteUrl("EditComment", new { id = Item.DiscRowID })%>' Target="_blank" />
@@ -139,10 +155,12 @@
                     <EmptyDataTemplate>
                     </EmptyDataTemplate>
                 </asp:ListView>
-                     <asp:HyperLink runat="server" class="answerThreadLink" Text="Svara" NavigateUrl='<%# GetRouteUrl("AddComment", new { id = Item.ThreadID })%>' Target="_blank" />
+                    <%-- Länk till sida för att svara på specifik tråd.--%>
+                    <asp:HyperLink runat="server" class="answerThreadLink" Text="Svara" NavigateUrl='<%# GetRouteUrl("AddComment", new { id = Item.ThreadID })%>' Target="_blank" />
                 </div>
             </ItemTemplate>
             <EmptyDataTemplate>
+                <%-- Skrivs ut om ingen data har funnits i databasen på angiven plats.--%>
                 <p>Ingen har frågat något än.</p>
             </EmptyDataTemplate>
         </asp:ListView>
@@ -150,7 +168,11 @@
     </div>
     </form>
 </asp:Content>
+
+<%-- PlaceHolder för till masterpage--%>
 <asp:Content ID="Content3" ContentPlaceHolderID="ScriptContentPlaceHolder" runat="server">
+
+    <%-- Script föra tt kunna stänga av meddelanen till användaren--%>
     <script type="text/javascript">
         setTimeout(function () {
             var closeMessageLink = document.getElementById("CloseLink");

@@ -44,7 +44,7 @@ namespace LectureComments.Model.DAL
         }
         #endregion
 
-        //Lägger till föreläsning i databasen
+        //Lägger till kommentar i datalagret.
         public void InsertDiscRow(Comment Comment)
         {
             using (var conn = CreateConnection())
@@ -69,6 +69,7 @@ namespace LectureComments.Model.DAL
             }
         }
 
+        //Uppdaterar kommentar i datalagret.
         public void UpdateDiscRow(Comment Comment)
         {
             using (var conn = CreateConnection())
@@ -95,6 +96,7 @@ namespace LectureComments.Model.DAL
             }
         }
 
+        //Tar bort kommentar i datalagret.
         public void DeleteDiscRow(int discRowID)
         {
             using (var conn = CreateConnection())
@@ -117,6 +119,7 @@ namespace LectureComments.Model.DAL
             }
         }
 
+        //Hämtar specifik kommentar i datalagret.
         public Comment GetCommentById(int DiscRowID)
         {
             using (var conn = CreateConnection())
@@ -165,6 +168,7 @@ namespace LectureComments.Model.DAL
 
         }
 
+        //Hämtar kommentarer från datalagret i specifik tråd.
         public IEnumerable<Comment> getCommentsInThread(int ThreadID)
         {
             using (var conn = CreateConnection())

@@ -10,7 +10,6 @@ namespace LectureComments.Model.DAL
 {
     public class ThreadDAL
     {
-        //Tillhandalhåller fält för connectionstring för att ansluta till servern.
         #region Fält
         /// <summary>
         /// Sträng med information som används för att ansluta till "SQL-server"-databasen.
@@ -44,6 +43,7 @@ namespace LectureComments.Model.DAL
         }
         #endregion
 
+        //Lägger till ny tråd samt första kommentar i tråden, i datalagret.
         public void StartThread(Thread Thread)
         {
             using (var conn = CreateConnection())
@@ -69,6 +69,7 @@ namespace LectureComments.Model.DAL
             }
         }
 
+        //Hämtar all data till tråd-objekt beroende på specifik lektion
         public IEnumerable<Thread> getThreadByID(int LectureID)
         {
             using (var conn = CreateConnection())
@@ -120,6 +121,7 @@ namespace LectureComments.Model.DAL
             }
         }
 
+        //Hämtar alla trådar i specifik lektion från datalagret.
         public IEnumerable<ThreadOnly> getThreadByID2(int LectureID)
         {
             using (var conn = CreateConnection())
@@ -163,6 +165,7 @@ namespace LectureComments.Model.DAL
             }
         }
 
+        /*
         public Question GetQuestionById(int QuestionID)
         {
             using (var conn = CreateConnection())
@@ -202,6 +205,9 @@ namespace LectureComments.Model.DAL
             }
         }
 
+         */
+ 
+        /*
         public void UpdateComment(Question Question)
         {
             using (var conn = CreateConnection())
@@ -224,5 +230,6 @@ namespace LectureComments.Model.DAL
                 }
             }
         }
+        */
     }
 }

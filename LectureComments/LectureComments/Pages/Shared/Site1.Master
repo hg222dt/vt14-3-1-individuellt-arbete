@@ -1,10 +1,15 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="LectureComments.Pages.Shared.Site1" ViewStateMode="Disabled" %>
 
+
+<%-- Master Page till alla sidor i appen --%>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>
+
+        <%-- ContentPlaceHolder för Titel--%>
         <asp:ContentPlaceHolder ID="TitleContentPlaceHolder" runat="server">
             Föreläsningsfrågor
     </asp:ContentPlaceHolder>
@@ -12,8 +17,14 @@
     <link rel="stylesheet" href="../../css/styles1.css" />
 </head>
 <body>
+
+    <%-- Div-tagg som kapslar in alla sidors data --%>
     <div class="mainContainer">
+
+        <%-- ContentPlaceHOlder för huvudsaklig html på sidor. --%>
         <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" />
+
+        <%-- ContentPlaceHolder för skript på sidor--%>
         <asp:ContentPlaceHolder ID="ScriptContentPlaceHolder" runat="server" />
     </div>
 </body>

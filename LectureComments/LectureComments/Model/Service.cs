@@ -41,23 +41,28 @@ namespace LectureComments.Model
             return LectureDAL.GetLectures();
         }
 
+        //Hämtar föreläsningsobjekt från DAL beroende på Id på föreläsning.
         public Lecture GetLecture(int LectureID)
         {
             return LectureDAL.GetLectureById(LectureID);
         }
 
-        public Question GetQuestion(int QuestionID)
-        {
-            return ThreadDAL.GetQuestionById(QuestionID);
-        }
+        
+        //public Question GetQuestion(int QuestionID)
+        //{
+        //    return ThreadDAL.GetQuestionById(QuestionID);
+        //}
 
+        //Hämtar kommentarsobjekt beroende på id av kommentar som skickas som argument.
         public Comment GetCommentById(int DiscRowID)
         {
             return DiscRowDAL.GetCommentById(DiscRowID);
         }
 
+        //Sparar eller uppdaterar en föreläsning, med föreläsningsobjekt som parameter.
         public void SaveLecture(Lecture lecture)
         {
+            //Validering av föreläsning som ska sparas eller uppdateras
             ICollection<ValidationResult> validationResults;
             if (!lecture.Validate(out validationResults))
             {
@@ -66,6 +71,7 @@ namespace LectureComments.Model
                 throw ex;
             }
 
+            //Om föreläsningens id  är 0, ska föreläsningen sparas. I annat fall uppdateras.
             if (lecture.LectureId == 0)
             {
                 LectureDAL.InsertLecture(lecture);
@@ -76,33 +82,39 @@ namespace LectureComments.Model
             }
         }
 
+        //Ta bort föreläsning. Parameter - föreläsnings-id
         public void DeleteLecture(int id)
         {
             LectureDAL.DeleteLecture(id);
         }
 
+        //Startar ny diskussionstråd i förelsäning. Argument - Tråd-objket.
         public void StartThread(Thread Thread)
         {
             ThreadDAL.StartThread(Thread);
         }
 
-        public void UpdateComment(Question Question)
-        {
-            ThreadDAL.UpdateComment(Question);
-        }
+        //public void UpdateComment(Question Question)
+        //{
+        //    ThreadDAL.UpdateComment(Question);
+        //}
 
+        //Returnerar alla trådobjekt (Thread) till specifik föreläsning.
         public IEnumerable<Thread> getThreadByID(int LectureID)
         {
             return ThreadDAL.getThreadByID(LectureID);
         }
 
+        //Returnerar alla trådobjekt (ThreadOnly) till specifik föreläsning.
         public IEnumerable<ThreadOnly> getThreadByID2(int LectureID)
         {
             return ThreadDAL.getThreadByID2(LectureID);
         }
 
+        //Sparar eller uppdaterar kommentar i tråd, med Comment-objekt som argument.
         public void SaveComment (Comment Comment)
         {
+            //Validering av kommentar.
             ICollection<ValidationResult> validationResults;
             if (!Comment.Validate(out validationResults))
             {
@@ -111,6 +123,7 @@ namespace LectureComments.Model
                 throw ex;
             }
 
+            //Om kommentarens id är 0 ska en den sparas som en ny kommentar. I annat fall uppdateras.
             if (Comment.DiscRowID == 0)
             {
                 DiscRowDAL.InsertDiscRow(Comment);
@@ -121,14 +134,16 @@ namespace LectureComments.Model
             }
         }
 
+        //Tar bort kommentar utifrån id.
         public void DeleteComment(int id)
         {
             DiscRowDAL.DeleteDiscRow(id);
         }
 
-        public IEnumerable<Comment> getCommentsInThread(int LectureID)
+        //Returnerar alla kommentarer i specifik tråd.
+        public IEnumerable<Comment> getCommentsInThread(int ThreadID)
         {
-            return DiscRowDAL.getCommentsInThread(LectureID);
+            return DiscRowDAL.getCommentsInThread(ThreadID);
         }
     }
 }

@@ -10,7 +10,6 @@ namespace LectureComments.Model.DAL
 {
     public class LectureDAL
     {
-        //Tillhandalhåller fält för connectionstring för att ansluta till servern.
         #region Fält
         /// <summary>
         /// Sträng med information som används för att ansluta till "SQL-server"-databasen.
@@ -90,8 +89,7 @@ namespace LectureComments.Model.DAL
             }
         }
 
-
-        //Lägger till föreläsning i databasen
+        //Lägger till föreläsning i datalagret.
         public void InsertLecture(Lecture Lecture)
         {
             using (var conn = CreateConnection())
@@ -118,6 +116,7 @@ namespace LectureComments.Model.DAL
             }
         }
 
+        //Hämtar specifik föreläsning i datalagret.
         public Lecture GetLectureById(int LectureID)
         {
             using (var conn = CreateConnection())
@@ -193,6 +192,7 @@ namespace LectureComments.Model.DAL
             }
         }
 
+        //Tar bort specifik föreläsning i föreläsning.
         public void DeleteLecture (int LectureID)
         {
             using (SqlConnection conn = CreateConnection())

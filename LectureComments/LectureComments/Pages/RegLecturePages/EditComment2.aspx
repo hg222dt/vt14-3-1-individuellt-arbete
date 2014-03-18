@@ -1,8 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Shared/Site1.Master" AutoEventWireup="true" CodeBehind="EditComment2.aspx.cs" Inherits="LectureComments.Pages.RegLecturePages.EditComment2" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="TitleContentPlaceHolder" runat="server">
-</asp:Content>
+
+<%-- Placeholder till masterpage--%>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <form id="form1" runat="server">
+    
+    <%-- Kapslar in  titel och beskrivning av sidan--%>    
     <div class="title">
         <h3 class="titleText">Uppdatera kommentar</h3>
         <div class="subText">
@@ -11,13 +13,19 @@
             </p>
         </div>
     </div>
+
+    <%-- In oh ut-matning av data till berörd kommentar.--%>
     <div class="centerDiv">
+
+        <%-- Skriver ut status-meddelande--%>
         <asp:Panel ID="SucceedPanel" runat="server" Visible="false" CssClass="AssignmentSuccess">
             <asp:Label ID="SucceedLabel" runat="server" Text="" />
         </asp:Panel>
 
+        <%-- Summerar resultatet av valideringarna --%>
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
         
+        <%-- Skriver ut data för angiven kommentar, samt gör input möjlighet för uppdatering av data--%>
         <asp:FormView ID="UpdateLectureForm" runat="server"
                 ItemType="LectureComments.Model.Comment"
                 DataKeyNames="DiscRowID"
@@ -30,6 +38,7 @@
                     <label>Kommentarstext</label>
                 </div>
                 <div>
+                    <%-- KOmmentarstext --%>
                     <asp:TextBox ID="DiscTextTB" runat="server" Text='<%# BindItem.DiscText %>' MaxLength="300" TextMode="MultiLine" />
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" 
                                                 runat="server" 
@@ -37,15 +46,20 @@
                                                 ControlToValidate="DiscTextTB" Display="None"/>
                 </div>
                 <div>
+                    <%-- Knapp för att skicka data man vill uppdatera med--%>
                     <asp:Button ID="SaveButton" runat="server" Text="Uppdatera" CommandName="Update" />
                 </div>
             </EditItemTemplate>
         </asp:FormView>
+        <%-- Länk för att stänga av meddelande--%>
         <a href="#" id="CloseLink2">Tillbaka till föreläsning</a>
     </div>
     </form>
 </asp:Content>
+
+<%-- Script-placeholer för masterpage--%>
 <asp:Content ID="Content3" ContentPlaceHolderID="ScriptContentPlaceHolder" runat="server">
+    <%-- Script som gör att meddelande tas bort när stäng-knapp trycks.--%>
     <script type="text/javascript">
         setTimeout(function () {
             var statusMessageDiv = document.getElementById("MainContentPlaceHolder_SucceedPanel");
