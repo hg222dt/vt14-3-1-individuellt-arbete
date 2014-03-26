@@ -72,7 +72,7 @@ namespace LectureComments.Model.DAL
                                 LectureId = reader.GetInt32(lectureIdIndex),
                                 LectureName = reader.GetString(lectureNameIndex),
                                 CourseName = reader.GetString(courseNameIndex),
-                                LectureDate = reader.GetString(dateIndex),
+                                LectureDate = reader.GetDateTime(dateIndex),
                                 TeacherName = reader.GetString(teacherNameIndex)
                             });
                         }
@@ -99,7 +99,7 @@ namespace LectureComments.Model.DAL
                     var cmd = new SqlCommand("appSchema.usp_CreateLecture", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@Date", SqlDbType.NVarChar, 50).Value = Lecture.LectureDate;
+                    cmd.Parameters.Add("@Date", SqlDbType.Date).Value = Lecture.LectureDate;
                     cmd.Parameters.Add("@Teacher", SqlDbType.NVarChar, 50).Value = Lecture.TeacherName;
                     cmd.Parameters.Add("@LectureName", SqlDbType.NVarChar, 50).Value = Lecture.LectureName;
                     cmd.Parameters.Add("@CourseName", SqlDbType.NVarChar, 50).Value = Lecture.CourseName;
@@ -146,7 +146,7 @@ namespace LectureComments.Model.DAL
                                 LectureId = reader.GetInt32(lectureIdIndex),
                                 LectureName = reader.GetString(lectureNameIndex),
                                 CourseName = reader.GetString(courseNameIndex),
-                                LectureDate = reader.GetString(dateIndex),
+                                LectureDate = reader.GetDateTime(dateIndex),
                                 TeacherName = reader.GetString(teacherNameIndex),
                                 VideoUrl = reader.GetString(videoUrlIndex)
                             };

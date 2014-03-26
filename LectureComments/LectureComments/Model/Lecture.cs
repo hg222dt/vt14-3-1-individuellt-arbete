@@ -27,10 +27,11 @@ namespace LectureComments.Model
         public string CourseName { get; set; }
 
         //Datum-sträng
-        //validering - Required. RegEx.
+        //validering - Required. DateFormat.
         [Required(ErrorMessage = "Ange ett datum")]
-        [RegularExpression(@"^(19|20)\d\d([- /.])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$", ErrorMessage = "Ange en datum i rätt format. [YYYY-MM-DD]")]
-        public string LectureDate { get; set; }
+        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{yyyy-MM-dd:0}")]
+        [DataType(DataType.Date, ErrorMessage = "Ange en datum i rätt format. [YYYY-MM-DD]")]
+        public DateTime LectureDate { get; set; }
 
         //Lärarnamn
         //Validering - Required. Längd på sträng.

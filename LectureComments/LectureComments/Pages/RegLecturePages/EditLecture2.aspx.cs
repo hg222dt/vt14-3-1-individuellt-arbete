@@ -22,7 +22,6 @@ namespace LectureComments.Pages.RegLecturePages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         //Hämtar specifik föreläsnings detaljer.
