@@ -139,7 +139,6 @@ namespace LectureComments.Model.DAL
                         var discTextIndex = reader.GetOrdinal("DiscText");
                         var dateIndex = reader.GetOrdinal("Date");
                         var lectureIdIndex = reader.GetOrdinal("LectureID");
-                        //var timecodeIndex = reader.GetOrdinal("Timecode");
                         var authorIndex = reader.GetOrdinal("Author");
                         var threadIdIndex = reader.GetOrdinal("ThreadID");
 
@@ -152,8 +151,7 @@ namespace LectureComments.Model.DAL
                                 DiscRowID = reader.GetInt32(discRowIdIndex),
                                 DiscText = reader.GetString(discTextIndex),
                                 Author = reader.GetString(authorIndex),
-                                Date = reader.GetString(dateIndex),
-                                //Timecode = reader.GetString(timecodeIndex)
+                                Date = reader.GetDateTime(dateIndex)
                             };
                         }
                     }
@@ -202,7 +200,7 @@ namespace LectureComments.Model.DAL
                                 DiscRowID = reader.GetInt32(discRowIdIndex),
                                 DiscText = reader.GetString(discTextIndex),
                                 Author = reader.GetString(authorIndex),
-                                Date = reader.GetString(dateIndex),
+                                Date = reader.GetDateTime(dateIndex)
                             });
                         }
                     }

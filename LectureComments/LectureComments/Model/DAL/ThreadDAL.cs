@@ -55,7 +55,7 @@ namespace LectureComments.Model.DAL
 
                     cmd.Parameters.Add("@QuestionText", SqlDbType.NVarChar, 300).Value = Thread.QuestionText;
                     cmd.Parameters.Add("@LectureID", SqlDbType.NVarChar, 50).Value = Thread.LectureID;
-                    cmd.Parameters.Add("@Timecode", SqlDbType.Time, 0).Value = Thread.Timecode;
+                    cmd.Parameters.Add("@Timecode", SqlDbType.Time).Value = Thread.Timecode;
                     cmd.Parameters.Add("@Author", SqlDbType.NVarChar, 50).Value = Thread.Author;
 
                     conn.Open();
@@ -104,7 +104,7 @@ namespace LectureComments.Model.DAL
                                 QuestionText = reader.GetString(discTextIndex),
                                 Date = reader.GetString(dateIndex),
                                 Author = reader.GetString(authorNameIndex),
-                                Timecode = reader.GetString(timecodeIndex),
+                                Timecode = reader.GetTimeSpan(timecodeIndex),
                                 DiscRowID = reader.GetInt32(discRowIdIndex)
                             });
                         }
@@ -149,7 +149,7 @@ namespace LectureComments.Model.DAL
                             {
                                 ThreadID = reader.GetInt32(threadIdIndex),
                                 LectureID = reader.GetInt32(lectureIdIndex),
-                                Timecode = reader.GetString(timecodeIndex)
+                                Timecode = reader.GetTimeSpan(timecodeIndex)
                             });
                         }
                     }

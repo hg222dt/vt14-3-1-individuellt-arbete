@@ -29,7 +29,7 @@ namespace LectureComments.Model
         public int DiscRowID { get; set; }
 
         //Datum-sträng
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
 
         //Id för lektion
         public int LectureID { get; set; }

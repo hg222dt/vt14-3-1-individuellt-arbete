@@ -50,7 +50,7 @@
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Fyll i ett kursnamn" ControlToValidate="CourseNameTB" Display="None" />
                 </div>
                 <div>
-                    <label>Datum (Format: YYYY-MM-DD)</label>
+                    <label>Datum</label>
                 </div>
                 <div>
                     <%-- Datum --%>

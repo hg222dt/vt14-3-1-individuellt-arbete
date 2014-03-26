@@ -25,7 +25,7 @@ namespace LectureComments.Model
         //Angiven tidkod i videoklippet. Validering, Required och Regex
         [Required(ErrorMessage = "Ange en tidpunkt i videon. [HH:mm:ss]")]
         [RegularExpression(@"^(?:(?:([01]?\d|2[0-3]):)?([0-5]?\d):)?([0-5]?\d)$", ErrorMessage = "Ange en tidkod i rätt format. [HH:mm:ss]")]
-        public string Timecode { get; set; }
+        public TimeSpan Timecode { get; set; }
 
         //Avsändare av kommentar. Validering - Required och längd av sträng.
         [Required(ErrorMessage = "Ange ditt namn")]

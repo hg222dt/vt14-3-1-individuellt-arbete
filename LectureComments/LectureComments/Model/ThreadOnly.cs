@@ -19,7 +19,7 @@ namespace LectureComments.Model
 
         //Tidkoden i videoklippet som koden är registrerad på, m validering för Required, coh regex.
         [Required(ErrorMessage = "Ange en tidpunkt i videon. [HH:mm:ss]")]
-        [RegularExpression(@"^(?:(?:([01]?\d|2[0-3]):)?([0-5]?\d):)?([0-5]?\d)$", ErrorMessage = "Ange en tidkod i rätt format. [HH:mm:ss]")]
-        public string Timecode { get; set; }
+        //[RegularExpression(@"^(?:(?:([01]?\d|2[0-3]):)?([0-5]?\d):)?([0-5]?\d)$", ErrorMessage = "Ange en tidkod i rätt format. [HH:mm:ss]")]
+        public TimeSpan Timecode { get; set; }
     }
 }
