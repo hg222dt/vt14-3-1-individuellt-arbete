@@ -48,11 +48,13 @@
                 <div>
                     <%-- Knapp för att skicka data man vill uppdatera med--%>
                     <asp:Button ID="SaveButton" runat="server" Text="Uppdatera" CommandName="Update" />
+                    
+                    <%--<asp:HyperLink ID="BackLink" runat="server" class="sendQuestLink" NavigateUrl='<%# GetRouteUrl("DetailsLecture", new{ id = Item.LectureID})  %>' Text="Tillbaka till föreläsningen" />--%>
                 </div>
             </EditItemTemplate>
         </asp:FormView>
-        <%-- Länk för att stänga av meddelande--%>
-        <a href="#" id="CloseLink2">Tillbaka till föreläsning</a>
+
+        <asp:HyperLink runat="server" ID="CancelLink" Text="Avbryt" />
     </div>
     </form>
 </asp:Content>

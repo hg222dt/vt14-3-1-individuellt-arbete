@@ -29,7 +29,7 @@ namespace LectureComments.Pages.RegLecturePages
         protected void Page_Load(object sender, EventArgs e)
         {
             //UNdersöker om rättmeddelande finns tillgängligt.
-            if (Page.PeekTempData("SuccessMessage") as string == "Föreläsningen uppdaterades.")
+            if (Page.PeekTempData("SuccessMessage") as string != null)
             {
                 //Sätter label till rättmeddlande-text
                 UpdateSucceedLabel.Text = Page.GetTempData("SuccessMessage") as string;

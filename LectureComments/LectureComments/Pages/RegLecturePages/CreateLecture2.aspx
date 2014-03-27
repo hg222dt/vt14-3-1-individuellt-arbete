@@ -51,19 +51,21 @@
                     </div>
                     <div>
                         <%-- Datum --%>
-                        <asp:TextBox ID="DateTB" runat="server" Text='<%# BindItem.LectureDate %>' Textmode="Date"/>
+                        <asp:TextBox ID="DateTB" runat="server" Text='<%# BindItem.LectureDate %>' Textmode="Date" />
                         <%-- Required field-valdiering--%>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" 
                                                     runat="server" 
                                                     ErrorMessage="Fyll i ett datum." 
-                                                    ControlToValidate="DateTB" Display="None"/>
-                        <%-- RegEx- validering --%>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" 
-                                                        runat="server" 
-                                                        ErrorMessage="Datumet måste ha formatet YYYY-MM-DD" 
+                                                    ControlToValidate="DateTB" Display="None" />
+                        <%-- Datum-validering --%>
+                        <asp:CompareValidator
+                                                        id="dateValidator" runat="server" 
+                                                        Type="Date"
+                                                        Operator="DataTypeCheck"
                                                         ControlToValidate="DateTB" 
-                                                        ValidationExpression="^(19|20)\d\d([- /.])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$" 
-                                                        Display="None"/>
+                                                        ErrorMessage="Mata in ett korrekt datum.">
+                        </asp:CompareValidator>
+
                     </div>
                     <div>
                         <label>Lärare</label>

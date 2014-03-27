@@ -77,13 +77,14 @@
 
                     <%-- Knapp för att skicka fråga--%>
                     <div>
-                        <asp:LinkButton runat="server" Text="Skicka fråga!" CommandName="Insert" />
+                        <asp:LinkButton runat="server" Text="Skicka fråga!" CommandName="Insert" />                        
                     </div>
                 </InsertItemTemplate>
             </asp:FormView>
 
-            <%-- Stänger ner fönster --%>
-            <a href="#" id="CloseLink2">Tillbaka till föreläsning</a>
+            <%-- Går tillbaka till föreläsningssidan --%>
+            <asp:HyperLink runat="server" ID="CancelLink" Text="Avbryt" />
+
         </div>
     </form>
 </asp:Content>

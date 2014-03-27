@@ -100,7 +100,7 @@
                     
                     <%-- Länk för att ställa en fråga till videon --%>
                     <strong>
-                        <asp:HyperLink ID="CommentLink" runat="server" class="sendQuestLink" NavigateUrl='<%# GetRouteUrl("AddToThread", new{ id = Item.LectureId})  %>' Text="Ställ en fråga" Target="_blank"/>
+                        <asp:HyperLink ID="CommentLink" runat="server" class="sendQuestLink" NavigateUrl='<%# GetRouteUrl("AddToThread", new{ id = Item.LectureId})  %>' Text="Ställ en fråga" />
                     </strong>
                 </div>
             </ItemTemplate>
@@ -147,8 +147,8 @@
                             <%-- Utskrift av kommentarens text--%>
                             <span><%#: Item.DiscText %> </span>
                             <div class="commentButtons">
-                                <asp:HyperLink runat="server" class="commentLinks" Text="Uppdatera" NavigateUrl='<%# GetRouteUrl("EditComment", new { id = Item.DiscRowID })%>' Target="_blank" />
-                                <asp:HyperLink runat="server" class="commentLinks" Text="Radera" NavigateUrl='<%# GetRouteUrl("DeleteComment", new { id = Item.DiscRowID }) %>' Target="_blank" />
+                                <asp:HyperLink runat="server" class="commentLinks" Text="Uppdatera" NavigateUrl='<%# GetRouteUrl("EditComment", new { id = Item.DiscRowID, id2 = Item.LectureID })%>' />
+                                <asp:HyperLink runat="server" class="commentLinks" Text="Radera" NavigateUrl='<%# GetRouteUrl("DeleteComment", new { id = Item.DiscRowID, id2 = Item.LectureID }) %>' />
                             </div>
                         </div>
                     </ItemTemplate>
@@ -156,7 +156,7 @@
                     </EmptyDataTemplate>
                 </asp:ListView>
                     <%-- Länk till sida för att svara på specifik tråd.--%>
-                    <asp:HyperLink runat="server" class="answerThreadLink" Text="Svara" NavigateUrl='<%# GetRouteUrl("AddComment", new { id = Item.ThreadID })%>' Target="_blank" />
+                    <asp:HyperLink runat="server" class="answerThreadLink" Text="Svara" NavigateUrl='<%# GetRouteUrl("AddComment", new { id = Item.ThreadID, id2 = Item.LectureID })%>' />
                 </div>
             </ItemTemplate>
             <EmptyDataTemplate>

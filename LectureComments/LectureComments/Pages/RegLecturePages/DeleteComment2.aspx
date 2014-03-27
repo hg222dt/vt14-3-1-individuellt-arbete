@@ -19,10 +19,12 @@
         <asp:Panel ID="DeleteFormPanel" runat="server">
             <h3>Vill du verkligen ta bort komentaren?</h3>
             <asp:LinkButton runat="server" ID="DeleteLink" Text="Radera kommentaren" OnCommand="DeleteLink_Command" CommandArgument='<%$ RouteValue:id %>' />
+            <%-- Går tillbaka till föreläsningssidan --%>
+            <asp:HyperLink runat="server" ID="CancelLink" Text="Avbryt" />
         </asp:Panel>
 
         <%-- Länk för att stänga fönster --%>
-        <a href="#" id="CloseLink2">Tillbaka till föreläsning</a>
+        
     </div>
     </form>
 </asp:Content>

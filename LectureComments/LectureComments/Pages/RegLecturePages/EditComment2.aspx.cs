@@ -20,18 +20,29 @@ namespace LectureComments.Pages.RegLecturePages
             get { return _service ?? (_service = new Service()); }
         }
 
+        protected int Id
+        {
+            get { return int.Parse(RouteData.Values["id"].ToString()); }
+        }
+
+        protected int Id2
+        {
+            get { return int.Parse(RouteData.Values["id2"].ToString()); }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //Sätter avbryt-länk till att dirigera tillbaka en sida
+            CancelLink.NavigateUrl = GetRouteUrl("DetailsLecture", new { id = Id2 });
         }
 
         //Returnerar kommentar med specifikt id
-        public Comment CommentFormView_GetItem([RouteData]int id)
+        public Comment CommentFormView_GetItem()
         {
             try
             {
                 //Hämtar kommentars-objekt
-                return Service.GetCommentById(id);
+                return Service.GetCommentById(Id);
             }
             catch (Exception)
             {
@@ -66,6 +77,7 @@ namespace LectureComments.Pages.RegLecturePages
 
                     //Sätter text till reätt-meddelande
                     Page.SetTempData("SuccessMessage", "Kommentaren uppdaterades!");
+                    Response.RedirectToRoute("DetailsLecture", new { id = Id2 });
                     Context.ApplicationInstance.CompleteRequest();
                 }
             }
@@ -73,19 +85,6 @@ namespace LectureComments.Pages.RegLecturePages
             {   
                 //Sätter felmeddelande
                 ModelState.AddModelError(String.Empty, "Fel inträffade då kommentaren skulle uppdateras.");
-            }
-
-            //Undersöker om Rättmeddelande finns tillgängligt
-            if (Page.PeekTempData("SuccessMessage") as string != null)
-            {
-                //Sätter label till text med meddelande
-                SucceedLabel.Text = Page.GetTempData("SuccessMessage") as string;
-
-                //Synliggör panel som kapslar in meddelande
-                SucceedPanel.Visible = true;
-
-                //osynliggör formulär på sidan.
-                UpdateLectureForm.Visible = false;
             }
         }
     }

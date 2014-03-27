@@ -62,9 +62,9 @@
                     </div>
                 </InsertItemTemplate>
             </asp:FormView>
-
-            <%-- Länk, stäng fönster--%>
-            <a href="#" id="CloseLink2">Tillbaka till föreläsning</a>
+        
+            <%-- Länk, tillbaka till föreläsning--%>
+            <asp:HyperLink runat="server" ID="CancelLink" Text="Avbryt" />
         </div>
     </form>
 </asp:Content>
