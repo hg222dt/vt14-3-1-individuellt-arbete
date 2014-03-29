@@ -8,41 +8,8 @@ using System.Data;
 
 namespace LectureComments.Model.DAL
 {
-    public class ThreadDAL
+    public class ThreadDAL : BaseDAL
     {
-        #region Fält
-        /// <summary>
-        /// Sträng med information som används för att ansluta till "SQL-server"-databasen.
-        /// (Ett statiskt fält tillhör klassen och delas av alla instanser av klassen).
-        /// </summary>
-        private static readonly string _connectionString;
-
-        #endregion
-
-        #region Konstruktorer
-
-        /// <summary>
-        /// Initierar statisk data. (Konstruktorn anropas automatiskt innan första instansen skapas
-        /// eller innan någon statisk medlem används.)
-        /// </summary>
-        static ThreadDAL()
-        {
-            _connectionString = WebConfigurationManager.ConnectionStrings["lectureConnectionString"].ConnectionString;
-        }
-        #endregion
-
-        #region Privata hjälpmetoder
-        /// <summary>
-        /// Skapar och initierar ett nytt anslutningsobjekt
-        /// </summary>
-        /// <returns>Referens till ett nytt SqlConnection-objekt</returns>
-
-        private static SqlConnection CreateConnection()
-        {
-            return new SqlConnection(_connectionString);
-        }
-        #endregion
-
         //Lägger till ny tråd samt första kommentar i tråden, i datalagret.
         public void StartThread(Thread Thread)
         {

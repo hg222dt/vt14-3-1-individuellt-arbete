@@ -81,6 +81,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Model\DAL\BaseDAL.cs" />
     <Compile Include="Model\DAL\DiscRowDAL.cs" />
     <Compile Include="Model\DAL\ThreadDAL.cs" />
     <Compile Include="Model\Lecture.cs" />
