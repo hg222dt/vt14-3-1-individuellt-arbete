@@ -11,6 +11,7 @@ namespace LectureComments.Pages.RegLecturePages
 {
     public partial class LectureDetails2 : System.Web.UI.Page
     {
+
         //Fält som är en räknar-variabel till listView som skriver ut kommentarer i trådar.
         private int innerListViewRow = 0;
 

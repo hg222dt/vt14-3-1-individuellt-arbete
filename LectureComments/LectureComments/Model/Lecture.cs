@@ -41,6 +41,7 @@ namespace LectureComments.Model
         //Validering - Required, längd på sträng.
         [Required(ErrorMessage = "Ange Url till video på föreläsningen.")]
         [StringLength(200, ErrorMessage = "Namn på lärare får inte vara mer än 200 tecken långt.")]
+        [DataType(DataType.Url, ErrorMessage="Du måste mata in en korrekt url.")]
         public string VideoUrl { get; set; }
     }
 }
