@@ -8,7 +8,7 @@
         </div>
         <div class="centerDiv">
             <p>Ett oväntat fel uppstod.</p>
-            <a href="../RegLecturePages/Listing2.aspx">Tillbaka till startsida?</a>
+            <asp:HyperLink runat="server"  Text="Tillbaka till startsidan?" NavigateUrl="<%$ RouteUrl:routename=LectureListing %>"/>
         </div>
     </form>
 </asp:Content>
