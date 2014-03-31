@@ -55,6 +55,7 @@
                 <div>
                     <%-- Datum --%>
                     <asp:TextBox ID="DateTB" runat="server" Text='<%# BindItem.LectureDate %>' />
+
                     <%-- Validering required field --%>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Fyll i ett datum." ControlToValidate="DateTB" Display="None"/>
                     <%-- Validering datum-format --%>

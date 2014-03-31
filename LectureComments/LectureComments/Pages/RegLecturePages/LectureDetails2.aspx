@@ -56,7 +56,7 @@
                     <div>
                         <%-- Datum --%>
                         <strong>
-                            <%#: Item.LectureDate %>
+                            <%# Item.LectureDate.ToShortDateString() %>
                         </strong>
                     </div>
                     <div>

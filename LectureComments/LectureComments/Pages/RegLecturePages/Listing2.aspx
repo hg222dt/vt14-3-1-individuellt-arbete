@@ -55,7 +55,7 @@
                                 <asp:HyperLink ID="LectureNameLink" runat="server" NavigateUrl='<%# GetRouteUrl("DetailsLecture", new{ id = Item.LectureId})  %>' Text='<%# Item.LectureName %>' />
                             </td>
                             <td>    
-                                <asp:Label ID="LectureDateLabel" runat="server" Text='<%#: Item.LectureDate %>' />
+                                <asp:Label ID="LectureDateLabel" runat="server" Text='<%# Item.LectureDate.ToShortDateString() %>' />
                             </td>
                         </tr>
                     </ItemTemplate>

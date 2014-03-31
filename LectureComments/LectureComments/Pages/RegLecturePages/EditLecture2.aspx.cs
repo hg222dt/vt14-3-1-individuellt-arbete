@@ -77,5 +77,12 @@ namespace LectureComments.Pages.RegLecturePages
                 ModelState.AddModelError(String.Empty, "Fel inträffade då föreläsningen skulle uppdateras.");
             }
         }
+
+        public string dateToString(DateTime date)
+        {
+            string str = date.ToShortDateString();
+
+            return str;
+        }
     }
 }

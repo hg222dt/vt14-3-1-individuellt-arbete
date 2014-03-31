@@ -31,18 +31,9 @@ namespace LectureComments.Model
         [DataType(DataType.Date, ErrorMessage = "Ange en datum i rätt format. [YYYY-MM-DD]")]
         public DateTime LectureDate
         {
-            get
-            {
-                return _lectureDate;
-            }
-
-            set
-            {
-                _lectureDate = value.Date;
-            }
+            get;
+            set;
         }
-
-        private DateTime _lectureDate;
 
         //Lärarnamn
         //Validering - Required. Längd på sträng.
