@@ -9,7 +9,7 @@
         <h3 class="titleText">Uppdatera kommentar</h3>
         <div class="subText">
             <p>
-                Uppdatera din fråga här. OBSERVEREA att när du skickat din fråga och kommit tillbaka till föreläsningen, måste du uppdatera sidan för att frågan ska dyka upp.
+                Uppdatera din fråga här.
             </p>
         </div>
     </div>

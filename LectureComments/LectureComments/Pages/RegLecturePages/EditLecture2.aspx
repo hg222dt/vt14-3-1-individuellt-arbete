@@ -50,19 +50,16 @@
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Fyll i ett kursnamn" ControlToValidate="CourseNameTB" Display="None" />
                 </div>
                 <div>
-                    <label>Datum</label>
+                    <label>Datum [YYYY-mm-dd]</label>
                 </div>
                 <div>
                     <%-- Datum --%>
-                    <asp:TextBox ID="DateTB" runat="server" Text='<%# BindItem.LectureDate %>' TextMode="Date" />
-                    <%-- Valideringar --%>
+                    <asp:TextBox ID="DateTB" runat="server" Text='<%# BindItem.LectureDate %>' />
+                    <%-- Validering required field --%>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Fyll i ett datum." ControlToValidate="DateTB" Display="None"/>
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" 
-                                                        runat="server" 
-                                                        ErrorMessage="Datumet måste ha formatet YYYY-MM-DD" 
-                                                        ControlToValidate="DateTB"
-                                                        ValidationExpression="^(19|20)\d\d([- /.])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$" 
-                                                        Display="None"/>
+                    <%-- Validering datum-format --%>
+                    <asp:CompareValidator runat="server" Operator="DataTypeCheck" Display="None" Type="Date" ControlToValidate="DateTB" ErrorMessage="Datumet måste ha formatet YYYY-MM-DD" />
+                    
                 </div>
                 <div>
                     <label>Lärare</label>

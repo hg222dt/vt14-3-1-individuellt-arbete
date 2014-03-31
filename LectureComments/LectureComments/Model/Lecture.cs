@@ -29,7 +29,20 @@ namespace LectureComments.Model
         //validering - Required. DateFormat.
         [Required(ErrorMessage = "Ange ett datum")]
         [DataType(DataType.Date, ErrorMessage = "Ange en datum i rätt format. [YYYY-MM-DD]")]
-        public DateTime LectureDate { get; set; }
+        public DateTime LectureDate
+        {
+            get
+            {
+                return _lectureDate;
+            }
+
+            set
+            {
+                _lectureDate = value.Date;
+            }
+        }
+
+        private DateTime _lectureDate;
 
         //Lärarnamn
         //Validering - Required. Längd på sträng.

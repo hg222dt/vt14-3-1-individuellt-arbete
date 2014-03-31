@@ -47,22 +47,24 @@
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Fyll i ett kursnamn" ControlToValidate="CourseNameTB" Display="None" />
                     </div>
                     <div>
-                        <label>Datum</label>
+                        <label>Datum [YYYY-mm-dd]</label>
                     </div>
                     <div>
                         <%-- Datum --%>
-                        <asp:TextBox ID="DateTB" runat="server" Text='<%# BindItem.LectureDate %>' Textmode="Date" />
+                        <asp:TextBox ID="DateTB" runat="server" Text='<%# BindItem.LectureDate %>' />
                         <%-- Required field-valdiering--%>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" 
                                                     runat="server" 
                                                     ErrorMessage="Fyll i ett datum." 
-                                                    ControlToValidate="DateTB" Display="None" />
+                                                    ControlToValidate="DateTB" 
+                                                    Display="None" />
                         <%-- Datum-validering --%>
                         <asp:CompareValidator
                                                         id="dateValidator" runat="server" 
                                                         Type="Date"
                                                         Operator="DataTypeCheck"
                                                         ControlToValidate="DateTB" 
+                                                        Display="None"
                                                         ErrorMessage="Mata in ett korrekt datum.">
                         </asp:CompareValidator>
 

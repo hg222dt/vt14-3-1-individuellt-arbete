@@ -9,7 +9,7 @@
             <h3 class="titleText">Svara på fråga</h3>
             <div class="subText">
                 <p>
-                    Här kan du svara på en tråd. Du kommer behöva uppdatera sidan med kommentarer för att din fråga ska dyka upp.
+                    Här kan du svara på en tråd.
                 </p>
             </div>
         </div>
